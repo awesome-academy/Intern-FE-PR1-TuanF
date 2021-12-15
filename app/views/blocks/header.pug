@@ -1,0 +1,17 @@
+mixin header
+  header.header
+    .container.header-container
+      label.nav__hamburger(for="nav-mobile-input") 
+        i.bx.bx-menu.nav__hamburger-icon
+      input(type="checkbox" name="" id="nav-mobile-input" class="nav__input")
+      label.nav-overplay(for="nav-mobile-input") 
+      nav.header__menu
+        label(for="nav-mobile-input")
+          i.bx.bx-x.nav__delete
+        ul.header__list
+          +listItem('header__list-item', 'header__list-link', 'Tài khoản của tôi', 'Trạng thái đơn hàng', 'Danh sách ưu thích', 'Giỏ hàng', 'Đăng nhập','Đăng ký')
+      .header__search 
+        input(type="text" placeholder="Tìm kiếm ở đây ..." class="header__search-input")
+        a.header__search-icon(href="#")
+          i.bx.bx-search
+  section.banner

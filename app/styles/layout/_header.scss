@@ -1,0 +1,181 @@
+.header {
+  height: 3.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-elevate;
+  background: $bg-header;
+
+  &-container {
+    @include flex(center, space-between);
+    height: 100%;
+
+    @include responsive("tablet") {
+      @include flex($justify: space-between);
+    }
+  }
+
+  &__menu {
+    position: relative;
+
+    @include responsive("tablet") {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      width: 320px;
+      max-width: 100%;
+      background: $secondary-color;
+      padding: 4rem 3rem;
+      transform: translateX(-100%);
+      opacity: 0;
+      transition: all 0.3s linear;
+    }
+  }
+
+  &__list {
+    @include flex($align: center, $justify: space-between, $gap: 3rem);
+
+    &-link {
+      color: $gray-color;
+    }
+
+    &-item {
+      position: relative;
+
+      &:hover .header__list-link {
+        color: $orange-color;
+        text-decoration: underline;
+      }
+
+      &:not(:first-child)::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -17.5px;
+        width: 5px;
+        height: 1px;
+        transform: translateY(-50%);
+        background: $gray-color;
+      }
+
+      @include responsive("tablet") {
+        font-size: 1.8rem;
+
+        &:not(:first-child)::before {
+          content: unset;
+        }
+
+        .header__list-link {
+          color: $title-color;
+        }
+      }
+    }
+
+    @include responsive("tablet") {
+      @include flex(flex-start, space-between, nowrap, column, 2rem);
+    }
+  }
+  &__search {
+    @include flex(center, space-between);
+    height: 100%;
+
+    &-input {
+      border: none;
+      outline: none;
+      border-left: 1px solid $secondary-color;
+      padding-left: 10px;
+      background: none;
+      color: $gray-color;
+
+      &::placeholder {
+        font-style: italic;
+        font-size: 1.2rem;
+        color: $gray-color;
+      }
+    }
+
+    &-icon {
+      display: inline-flex;
+      align-items: center;
+      color: $secondary-color;
+      margin-left: 6rem;
+
+      @include responsive("mobile") {
+        margin-left: 0;
+      }
+
+      i {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.nav__hamburger,
+.nav__input,
+.nav-overplay {
+  display: none;
+}
+
+.nav__hamburger-icon,
+.nav__delete {
+  position: absolute;
+  display: none;
+}
+
+@include responsive("tablet") {
+  .nav__hamburger {
+    display: block;
+  }
+
+  .nav-overplay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $bg-overplay;
+    animation: fadeIn 0.3s linear;
+  }
+
+  .nav__input:checked ~ .nav-overplay {
+    display: block;
+  }
+
+  .nav__input:checked ~ .header__menu {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: $z-sticky;
+  }
+
+  .nav__hamburger-icon {
+    display: block;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: $secondary-color;
+  }
+
+  .nav__input {
+    left: 5rem;
+  }
+
+  .nav__delete {
+    display: block;
+    font-size: 3.6rem;
+    color: $title-color;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 500px;
+  background-image: url("../../images/slide-1-2050x898.jpg");
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
