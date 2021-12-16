@@ -1,4 +1,13 @@
-mixin listItem(class1,class2, ...items)
+mixin listItem(class1, class2, ...items)
   each item in items
     li(class=class1)
-      a(href="#")(class=class2)= item
+          a(href="#")(class=class2)= item
+            if block 
+              block
+
+mixin listItem1({class1, class2, items: [...items]})
+  each item in items
+    li(class=class1)
+          a(href="#")(class=class2)= item
+            if block 
+              block
