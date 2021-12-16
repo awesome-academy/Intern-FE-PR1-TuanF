@@ -1,4 +1,6 @@
 $font: "Times New Roman", sans-serif;
+$font-corinthia: "Corinthia", cursive;
+$font-lobster: "Lobster", cursive;
 
 $primary-color: #818181;
 $secondary-color: #ffffff;
@@ -10,6 +12,7 @@ $bg-header: rgba(250, 250, 250, 0.1);
 $bg-overplay: rgba(0, 0, 0, 0.2);
 
 $breakpoints: (
+  "small": 599px,
   "mobile": 739px,
   "tablet": 1023px,
   "tablet-pro": 1365px,

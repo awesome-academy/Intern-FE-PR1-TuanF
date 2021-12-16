@@ -1,0 +1,99 @@
+.banner {
+  height: 665px;
+  background-image: url("../../images/slide-1-2050x898.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__content {
+    position: relative;
+    color: $gray-color;
+  }
+
+  &__title {
+    position: absolute;
+    font-size: 39rem;
+    font-family: $font-corinthia;
+    top: 17rem;
+    left: 5%;
+
+    @include responsive("tablet-pro") {
+      top: 12rem;
+    }
+
+    @include responsive("tablet") {
+      top: 15rem;
+      font-size: 30rem;
+    }
+
+    @include responsive("mobile") {
+      font-size: 20rem;
+      top: 12rem;
+    }
+
+    @include responsive("small") {
+      font-size: 12rem;
+      left: 0;
+      top: 18rem;
+    }
+
+    &-desc {
+      font-size: 4.4rem;
+      font-family: $font-lobster;
+      margin-left: 3rem;
+
+      @include responsive("tablet") {
+        font-size: 3.2rem;
+      }
+
+      @include responsive("mobile") {
+        font-size: 2.8rem;
+      }
+
+      @include responsive("small") {
+        font-size: 2rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &__desc {
+    position: absolute;
+    font-size: 9.8rem;
+    top: 17rem;
+    left: 45%;
+    transform: translateX(-45%);
+
+    @include responsive("tablet-pro") {
+      font-size: 8rem;
+      top: 13rem;
+      left: 55%;
+      transform: translateX(-55%);
+    }
+
+    @include responsive("tablet") {
+      font-size: 6.4rem;
+      top: 16rem;
+    }
+
+    @include responsive("mobile") {
+      font-size: 4.6rem;
+      top: 13rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include responsive("small") {
+      font-size: 3rem;
+      top: 17rem;
+    }
+  }
+
+  @include responsive("tablet-pro") {
+    height: 500px;
+  }
+
+  @include responsive("mobile") {
+    height: 350px;
+  }
+}
