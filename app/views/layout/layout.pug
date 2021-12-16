@@ -1,5 +1,6 @@
 include ../blocks/mixins
 include ../blocks/header
+include ../blocks/footer
 block vars
 	-title = 'Site'
 doctype html
@@ -18,4 +19,5 @@ html(lang="en")
 			block header
 				+header
 			block container
-			block footer		
+			block footer
+				+footer

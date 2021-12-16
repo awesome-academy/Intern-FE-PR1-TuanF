@@ -1,0 +1,61 @@
+mixin footer 
+  footer.footer
+    .container.footer-container
+      .footer__list-left
+        ul.footer__list 
+          li.footer__list-item 
+            p Thông tin
+            +listItem1({class1: 'footer__list-item', class2: 'footer__list-link', items: ['Về chúng tôi', 'Giao hàng', 'Cảm nghĩ', 'Lưu trữ', 'Chính sách riêng tư'] 
+              })
+
+        ul.footer__list 
+          li.footer__list-item 
+            p Mua hàng
+          +listItem1({class1: 'footer__list-item', class2: 'footer__list-link', items: ['Vận chuyển và trả hàng', 'Mùa hàng An toàn', 'Vận quốc tết', 'Liên kết', 'Dịch vụ giảm giá'] 
+              })
+
+      .footer__list-right
+        ul.footer__list 
+          li.footer__list-item 
+            p Gửi Email
+          li.footer__list-item
+            a.footer__list-link(href="#") Gửi email cho chung tôi để được hỗ trợ
+          li.footer__list-item
+            input.footer__list-input(type="text" placeholder="Enter your email")
+            a.footer__list-btn(href="#") Gửi
+          ul.footer__list-item
+            each item in ['bx bxl-twitter', 'bx bxl-google-plus', 'bx bxl-chrome', 'bx bxl-linkedin', 'bx bx-wifi-2']
+              +listItem('', 'footer__list-link','')
+                i.footer__list-icon(class=item)
+
+        ul.footer__list 
+          li.footer__list-item 
+            p Liên hệ
+          li.footer__list-item
+            a.footer__list-link(href="#")
+              i.bx.bxs-location-plus.footer__list-contact
+              p Tầng 4, Toà nhà Hanoi Group Số 442 Đội Cấn, P. Cống vị, Q. Ba đình, Hà Nội
+          li.footer__list-item
+            a.footer__list-link(href="#")
+              i.bx.bxs-phone.footer__list-contact
+              p (04) 6674 2332
+            a.footer__list-link(href="#")
+              i.bx.bxs-phone.footer__list-contact
+              p (04) 3786 8904
+          li.footer__list-item
+            a.footer__list-link(href="#")
+              i.bx.bxs-phone.footer__list-contact
+              p (04) 6680 9686
+            a.footer__list-link(href="#")
+              i.bx.bxl-gmail.footer__list-contact
+              p Support@bizweb.vn
+
+    .footer__social
+      .container.social-container 
+        .footer__social-copyright
+          i.bx.bx-copyright
+          p Copyright 2008-2014 DKT Technology JSC
+        ul.footer__social-list
+          each item in ['bx bxl-mastercard', 'bx bxl-visa', 'bx bxl-paypal', 'bx bxl-mastercard']
+            +listItem('footer__social-item', 'footer__social-link','')
+              i.footer__social-icon(class=item)
