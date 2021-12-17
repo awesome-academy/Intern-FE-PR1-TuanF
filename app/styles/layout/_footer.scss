@@ -73,14 +73,13 @@
           .footer__list {
             &-item:nth-child(3) {
               gap: 0;
-              border: 1px solid $title-color;
-              border-right: none;
 
               .footer__list {
                 &-input {
                   width: 24.5rem;
-                  padding: 8px 1rem;
-                  border: none;
+                  line-height: 32px;
+                  padding: 0px 1rem;
+                  border: 1px solid;
                   outline: none;
 
                   &::placeholder {
@@ -95,7 +94,8 @@
 
                 &-btn {
                   display: inline-block;
-                  padding: 11px 1.4rem;
+                  padding: 0px 1.4rem;
+                  line-height: 34px;
                   color: $secondary-color;
                   background: $title-color;
                   border: none;
@@ -106,11 +106,11 @@
                     content: "";
                     position: absolute;
                     right: 0;
-                    top: -1px;
+                    top: 0;
                     transform: translateX(100%);
                     border-left: 20px solid $title-color;
-                    border-top: 18px solid transparent;
-                    border-bottom: 18px solid transparent;
+                    border-top: 17px solid transparent;
+                    border-bottom: 17px solid transparent;
                   }
                 }
               }
