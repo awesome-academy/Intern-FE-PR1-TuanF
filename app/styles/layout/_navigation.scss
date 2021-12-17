@@ -1,0 +1,91 @@
+.nav {
+  padding: 2rem 0;
+  background: $title-color;
+
+  &-container {
+    @include flex(center, $gap: 7rem);
+
+    @include responsive("tablet") {
+      @include flex(center, $gap: 1rem);
+    }
+
+    @include responsive("mobile") {
+      @include flex(center, $gap: 2rem);
+    }
+
+    @include responsive("small") {
+      @include flex($dir: column);
+    }
+  }
+
+  &__image {
+    width: 50px;
+
+    &-logo {
+      width: 100%;
+      background: $title-color;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    @include responsive("mobile") {
+      width: 30px;
+    }
+
+    @include responsive("small") {
+      width: 100%;
+      @include flex($justify: center);
+    }
+  }
+
+  &__list {
+    width: calc(100% - 12rem);
+    @include flex($justify: space-between);
+
+    &-item {
+      @include responsive("small") {
+        width: 33.33333%;
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    &-link {
+      font-size: 1.3rem;
+      color: $secondary-color;
+      text-transform: uppercase;
+      transition: color 0.3s linear;
+
+      &:hover {
+        color: $orange-color;
+      }
+
+      @include responsive("mobile") {
+        font-size: 1.1rem;
+      }
+    }
+
+    @include responsive("tablet") {
+      width: calc(100% - 7rem);
+    }
+
+    @include responsive("mobile") {
+      width: calc(100% - 5rem);
+    }
+
+    @include responsive("small") {
+      width: 100%;
+      @include flex($wrap: wrap);
+    }
+  }
+
+  @include responsive("mobile") {
+    padding: 1.4rem 0;
+  }
+
+  @include responsive("small") {
+    padding: 1rem 0 2rem;
+  }
+}

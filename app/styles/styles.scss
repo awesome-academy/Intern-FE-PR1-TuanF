@@ -1,9 +1,10 @@
 @import "./base/reset";
-@import "./base/typography";
 @import "./helpers/variables";
 @import "./helpers/global";
+@import "./base/typography";
 @import "./helpers/mixins";
 @import "./components/button";
 @import "./layout/header";
 @import "./layout/footer";
 @import "./layout/banner";
+@import "./layout/navigation";
