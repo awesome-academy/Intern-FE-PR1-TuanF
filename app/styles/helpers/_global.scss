@@ -26,3 +26,16 @@ body {
     opacity: 1;
   }
 }
+
+.btn {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: $title-color;
+  color: $secondary-color;
+  text-transform: uppercase;
+  transition: all 0.3s linear;
+
+  &:hover {
+    background: $orange-color;
+  }
+}
