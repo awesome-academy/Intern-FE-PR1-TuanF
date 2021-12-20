@@ -1,0 +1,19 @@
+.gallery {
+  margin-top: 10rem;
+
+  &__images {
+    &-img {
+      width: 25%;
+      height: 30rem;
+      object-fit: cover;
+
+      @include responsive("tablet") {
+        width: 50%;
+      }
+
+      @include responsive("small") {
+        width: 100%;
+      }
+    }
+  }
+}
