@@ -33,9 +33,9 @@ body {
   background: $title-color;
   color: $secondary-color;
   text-transform: uppercase;
-  transition: all 0.3s linear;
+  transition: all 0.25s linear;
 
-  &:hover {
+  &-active:hover {
     background: $orange-color;
   }
 }

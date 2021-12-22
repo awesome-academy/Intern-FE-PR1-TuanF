@@ -1,0 +1,210 @@
+.list-product {
+  margin-top: 17rem;
+
+  &__intro {
+    text-align: center;
+    margin-bottom: 3.5rem;
+
+    .intro {
+      &-title {
+        font-size: 2.1rem;
+        color: $title-color;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        letter-spacing: 4px;
+      }
+    }
+  }
+
+  &__list {
+    @include flex($gap: 3rem);
+
+    .list-item {
+      width: calc(25% - 15px);
+      text-align: center;
+      border: 1px solid $border-color;
+      position: relative;
+
+      &--orange,
+      &--green,
+      &--red {
+        &::before {
+          content: "";
+          position: absolute;
+          top: -20px;
+          left: -5px;
+          width: 0;
+          height: 0;
+          border-right: 30px solid $orange-color;
+          border-top: 30px solid transparent;
+          border-bottom: 30px solid transparent;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          content: "Sale";
+          position: absolute;
+          top: 17px;
+          left: 2px;
+          width: 0;
+          height: 0;
+          color: $secondary-color;
+          font-size: 1.4rem;
+          transform: rotate(-45deg);
+        }
+      }
+
+      &--green {
+        &::before {
+          border-right: 30px solid $bg-green;
+        }
+
+        &::after {
+          content: "Mới";
+        }
+      }
+
+      &--red {
+        &::before {
+          border-right: 30px solid $bg-red;
+        }
+
+        &::after {
+          content: "Hót";
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        transition: all 0.25s linear;
+
+        .whishlist {
+          opacity: 1;
+        }
+
+        .btn-list-product {
+          background: $orange-color;
+        }
+      }
+
+      &__image {
+        width: 100%;
+        margin-bottom: 4rem;
+      }
+
+      &__title {
+        font-size: 1.4rem;
+        color: $title-color;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+
+      &__sale {
+        font-size: 2.1rem;
+        color: $orange-color;
+        margin-bottom: 2rem;
+
+        &-price {
+          font-size: 1.4rem;
+          margin-left: 1rem;
+          text-decoration: line-through;
+          color: $primary-color;
+        }
+      }
+
+      @include responsive("tablet") {
+        width: calc(50% - 15px);
+      }
+
+      @include responsive("small") {
+        width: 100%;
+      }
+    }
+
+    .whishlist {
+      @include flex(center, space-around);
+
+      background: $title-color;
+      color: $primary-color;
+      font-size: 1.4rem;
+      padding: 8px 0px;
+
+      &-item {
+        @include flex(center, $gap: 5px);
+        transition: color 0.25s linear;
+        position: relative;
+
+        &:hover {
+          color: $orange-color;
+        }
+
+        &:first-child {
+          i {
+            color: $secondary-color;
+            transition: color 0.25s linear;
+          }
+
+          &:hover {
+            color: $orange-color;
+
+            i {
+              color: $orange-color;
+            }
+          }
+        }
+      }
+
+      &-border {
+        &::after {
+          content: "";
+          position: absolute;
+          height: 3rem;
+          width: 0.1px;
+          top: -51%;
+          right: -30%;
+          background: $gray-color;
+          opacity: 0.2;
+        }
+
+        @include responsive("tablet-pro") {
+          &::after {
+            right: -15%;
+          }
+        }
+
+        @include responsive("tablet") {
+          &::after {
+            right: -45%;
+          }
+        }
+
+        @include responsive("mobile") {
+          &::after {
+            right: -25%;
+          }
+        }
+
+        @include responsive("small") {
+          &::after {
+            right: -38%;
+          }
+        }
+      }
+
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 30%;
+      opacity: 0;
+      transition: opacity 0.25s linear;
+
+      @include responsive("tablet") {
+        bottom: 25%;
+      }
+    }
+
+    @include responsive("tablet") {
+      @include flex($gap: 3rem, $wrap: wrap);
+    }
+  }
+}

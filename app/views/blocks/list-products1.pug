@@ -1,0 +1,21 @@
+block vars
+    - var listAlcohol = [{type: 'orange', src: '../../images/12.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}, {type: 'green', src: '../../images/12.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}, {type: 'red', src: '../../images/12.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}, {type: '', src: '../../images/12.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}]
+    - var title= 'Sản phẩm mới'
+section.list-product 
+  .container.list-product-container 
+    .list-product__intro
+        h2.intro-title= title
+        img(src="../../images/title-dark.png", alt="logo")
+    ul.list-product__list
+        each item in listAlcohol
+          +list-product({type: item.type ,src: item.src, title: item.title, sale: item.sale, price: item.price})
+            a.btn.btn-active.btn-list-product(href="#") Add to cart
+            .whishlist
+              .whishlist-item
+                i.bx.bxs-heart
+                p.whishlist-border Yêu thích
+              .whishlist-item
+                i.bx.bx-bar-chart-alt
+                p.whishlist-border So sánh
+              .whishlist-item
+                i.bx.bx-expand
