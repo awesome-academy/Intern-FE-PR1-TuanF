@@ -1,0 +1,18 @@
+.sponsor-section {
+  margin-top: 8rem;
+
+  .sponsor {
+    &__img {
+      img {
+        width: 33.33333%;
+      }
+
+      @include responsive("small") {
+        img {
+          width: 100%;
+          border: 1px solid $gray-color;
+        }
+      }
+    }
+  }
+}
