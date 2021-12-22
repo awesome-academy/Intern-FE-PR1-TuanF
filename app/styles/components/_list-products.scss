@@ -207,4 +207,8 @@
       @include flex($gap: 3rem, $wrap: wrap);
     }
   }
+
+  @include responsive("tablet") {
+    margin-top: 6rem;
+  }
 }
