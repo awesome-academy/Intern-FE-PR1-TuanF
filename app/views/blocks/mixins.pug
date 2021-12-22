@@ -1,7 +1,7 @@
 mixin listItem(class1, class2, ...items)
   each item in items
     li(class=class1)
-          a(href="#")(class=class2)= item
+          a(href="#")(class= class2)= item
             if block 
               block
 
@@ -11,3 +11,12 @@ mixin listItem1({class1, class2, items: [...items]})
           a(href="#")(class=class2)= item
             if block 
               block
+
+mixin list-product({type, src, title, sale, price})
+  li.list-item(class=(type ? `list-item--${type}` : ''))
+    img.list-item__image(src=src, alt="Alcohol")
+    h2.list-item__title= title
+    p.list-item__sale= sale
+      span.list-item__sale-price= price
+    if block 
+      block
