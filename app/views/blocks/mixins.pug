@@ -20,3 +20,15 @@ mixin list-product({type, src, title, sale, price})
       span.list-item__sale-price= price
     if block 
       block
+
+mixin blogCard({src, title, author, desc})
+  .blog-card__item
+    img.blog-card__item-img(src=src, alt="#")
+    h2.blog-card__item-title= title 
+    p.blog-card__item-author= author 
+    p.blog-card__item-desc= desc
+
+mixin blogTitle({class1, title, src})
+  h2(class= class1)= title
+  if src
+    img(src=src, alt="#")

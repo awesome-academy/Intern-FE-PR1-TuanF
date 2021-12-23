@@ -1,0 +1,19 @@
+block vars 
+  - var blogItems = [{src: '../../images/slide-3.jpg', title: 'Vang thăng long classic', author: 'đăng bởi Giangle | 30/6/2015 | 60 bình luận', desc: 'Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang nổ thăng long tạo cảm giác hương phấn. êm đềm, vui tươi, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml'}, {src: '../../images/slide-3.jpg', title: 'Vang thăng long classic', author: 'đăng bởi Giangle | 30/6/2015 | 60 bình luận', desc: 'Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang nổ thăng long tạo cảm giác hương phấn. êm đềm, vui tươi, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml'}]
+
+section.blog-posts
+  .container.blog-posts-container
+    .blog-posts__card
+      +blogTitle({class1:'blog-posts__card-title', title: 'Tin tức & Blog', src: '../../images/title-dark.png'})
+      .blog-posts__content
+        each blog in blogItems
+          - const {src, title, author, desc}= blog
+          +blogCard({src, title, author, desc})
+    .blog-posts__customer
+        +blogTitle({class1:'customer-title', title: 'Khách hàng', src: '../../images/title-dark.png'})
+        p.customer-icon "
+        p.customer-desc Vang nổ thăng long tạo cảm giác hương phấn. êm đềm, vui tươi, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml, sản phẩm được đóng chai dung tích 750ml
+        .customer-profile
+          img(src="../../images/avatar.jpg", alt="avatar")
+          h2.customer-profile__author Giang LT 
+          h2.customer-profile__desc Graphic design
