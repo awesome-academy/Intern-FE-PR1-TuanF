@@ -1,0 +1,165 @@
+.blog-posts {
+  margin-top: 15rem;
+
+  &-container {
+    @include flex($gap: 3rem);
+
+    @include responsive("mobile") {
+      @include flex($dir: column);
+    }
+  }
+
+  &__content {
+    @include flex($gap: 3rem);
+    margin-top: 4rem;
+
+    @include responsive("small") {
+      @include flex($dir: column);
+    }
+  }
+
+  .blog-card__item {
+    @include flex($dir: column, $gap: 1rem);
+    width: calc(50% - 15px);
+    text-align: justify;
+
+    &-img {
+      width: 100%;
+    }
+
+    &-title {
+      font-size: 1.8rem;
+      color: $heading-color;
+      text-transform: uppercase;
+
+      @include responsive("tablet") {
+        font-size: 1.6rem;
+      }
+    }
+
+    &-author {
+      opacity: 0.7;
+
+      @include responsive("tablet") {
+        font-size: 1.1rem;
+      }
+    }
+
+    &-desc {
+      @include clamp(4);
+      font-size: 1.4rem;
+      line-height: 1.4;
+
+      @include responsive("tablet") {
+        font-size: 1.3rem;
+      }
+    }
+
+    @include responsive("small") {
+      width: 100%;
+    }
+  }
+
+  &__card {
+    width: calc(70% - 15px);
+    text-align: center;
+
+    &-title {
+      font-size: 2.1rem;
+      color: $title-color;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    @include responsive("mobile") {
+      width: 100%;
+    }
+  }
+
+  &__customer {
+    width: calc(30% - 15px);
+    text-align: center;
+
+    .customer {
+      &-title {
+        font-size: 2.1rem;
+        letter-spacing: 3px;
+        color: $title-color;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      &-icon {
+        position: relative;
+        font-size: 5rem;
+        width: 5rem;
+        height: 5rem;
+        line-height: 6.5rem;
+        background: $orange-color;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 4rem;
+
+        @include responsive("tablet") {
+          width: 4rem;
+          height: 4rem;
+          margin-top: 3rem;
+        }
+      }
+
+      &-desc {
+        @include clamp(3);
+        font-size: 1.4rem;
+        line-height: 1.4;
+        margin-top: 2.5rem;
+
+        @include responsive("tablet") {
+          font-size: 1.3rem;
+          margin-top: 1.5rem;
+        }
+      }
+
+      &-profile {
+        @include flex($align: center, $dir: column, $gap: 1rem);
+        margin-top: 3rem;
+
+        img {
+          width: 9rem;
+          height: 9rem;
+          border-radius: 1rem;
+          object-fit: cover;
+
+          @include responsive("tablet") {
+            width: 6rem;
+            height: 6rem;
+          }
+
+          @include responsive("mobile") {
+            width: 10rem;
+            height: 10rem;
+          }
+        }
+
+        &__author {
+          font-size: 1.4rem;
+          color: $title-color;
+          text-transform: uppercase;
+        }
+
+        @include responsive("tablet") {
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    @include responsive("mobile") {
+      width: 100%;
+    }
+  }
+
+  @include responsive("tablet") {
+    margin-top: 10rem;
+  }
+}

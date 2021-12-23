@@ -1,10 +1,10 @@
 block vars
     - var listAlcohol = [{type: 'orange', src: '../../images/12.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}, {type: 'green', src: '../../images/12.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}, {type: 'red', src: '../../images/12.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}, {type: '', src: '../../images/12.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}]
-    - var title= 'Sản phẩm mới'
+    - var introTitle= 'Sản phẩm mới'
 section.list-product 
   .container.list-product-container 
     .list-product__intro
-        h2.intro-title= title
+        h2.intro-title= introTitle
         img(src="../../images/title-dark.png", alt="logo")
     ul.list-product__list
         each item in listAlcohol
