@@ -32,3 +32,24 @@ mixin blogTitle({class1, title, src})
   h2(class= class1)= title
   if src
     img(src=src, alt="#")
+
+mixin formGroup({ type= 'text',class1 = 'form-group__title', label, id})
+  .form-group
+    label(for=id, class= class1)&attributes(attributes)= label 
+    input(type=type, id=id)
+  if block
+    block
+
+mixin checkBox({id, label})
+  .checkbox
+    input(type='checkbox', id = id)
+    label(for=id)= label
+  if block
+    block 
+
+mixin formHeading({class1, title, desc, src })
+  p(class= class1)= title
+    if desc
+      span= desc
+  if src 
+    img(src=src, alt="#")

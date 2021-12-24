@@ -1,0 +1,15 @@
+section.login
+    .container 
+      .login__breadcrumb
+        +formHeading({class1: 'login__breadcrumb-home', title: 'Trang chủ / ', desc: 'Đăng nhập'})
+      .login__heading
+        .login__heading-inner
+          +formHeading({class1: 'login__heading-title', title: 'Đăng nhập', src: '../../images/titleleft-dark.png'})
+        a.btn.btn-active.login__heading-btn(href="#") Đăng ký
+      form.form(action="#")
+        h3.form-title Khách hàng đăng nhập
+        p.form-desc Nếu bạn có một tài khoản, xin vui lòng đăng nhập.
+        +formGroup({label: 'Email*'})
+        +formGroup({type: 'password', label:'Password*'})
+        +checkBox({label: 'Quên mật khẩu*', id: 'check'})
+        a.btn.btn-active.form-btn(href="#")  Đăng nhập

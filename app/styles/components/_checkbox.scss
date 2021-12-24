@@ -1,0 +1,27 @@
+.checkbox {
+  @include flex(center);
+  margin-top: 2.5rem;
+  margin-left: 7rem;
+
+  label {
+    font-size: 1.4rem;
+    color: $heading-color;
+    margin-left: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  label,
+  input {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @include responsive("small") {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
