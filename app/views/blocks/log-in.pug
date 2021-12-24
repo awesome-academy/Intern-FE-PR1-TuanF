@@ -9,7 +9,7 @@ section.login
       form.form(action="#")
         h3.form-title Khách hàng đăng nhập
         p.form-desc Nếu bạn có một tài khoản, xin vui lòng đăng nhập.
-        +formGroup({label: 'Email*'})
-        +formGroup({type: 'password', label:'Password*'})
+        +formGroup({label: 'Email*', id:'email1'})
+        +formGroup({type: 'password', label:'Password*',id:'password1'})
         +checkBox({label: 'Quên mật khẩu*', id: 'check'})
         a.btn.btn-active.form-btn(href="#")  Đăng nhập
