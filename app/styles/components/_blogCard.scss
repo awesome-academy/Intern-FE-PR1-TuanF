@@ -1,0 +1,41 @@
+.blog-card__item {
+  @include flex($dir: column, $gap: 1rem);
+  width: calc(50% - 1.5rem);
+  text-align: justify;
+
+  &-img {
+    width: 100%;
+  }
+
+  &-title {
+    font-size: 1.8rem;
+    color: $heading-color;
+    text-transform: uppercase;
+
+    @include responsive("tablet") {
+      font-size: 1.6rem;
+    }
+  }
+
+  &-author {
+    opacity: 0.7;
+
+    @include responsive("tablet") {
+      font-size: 1.1rem;
+    }
+  }
+
+  &-desc {
+    @include clamp(4);
+    font-size: 1.4rem;
+    line-height: 1.4;
+
+    @include responsive("tablet") {
+      font-size: 1.3rem;
+    }
+  }
+
+  @include responsive("small") {
+    width: 100%;
+  }
+}

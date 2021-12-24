@@ -5,7 +5,7 @@ section.blog-posts
   .container.blog-posts-container
     .blog-posts__card
       +blogTitle({class1:'blog-posts__card-title', title: 'Tin tức & Blog', src: '../../images/title-dark.png'})
-      .blog-posts__content
+      ul.blog-posts__content
         each blog in blogItems
           - const {src, title, author, desc}= blog
           +blogCard({src, title, author, desc})
