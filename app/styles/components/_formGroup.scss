@@ -1,0 +1,48 @@
+.form {
+  margin-top: 3rem;
+  padding: 5rem;
+  border: 1px solid $gray-color;
+
+  &-title {
+    font-size: 1.8rem;
+    color: $heading-color;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  &-desc {
+    font-size: 1.4rem;
+    color: $heading-color;
+  }
+
+  &-group {
+    @include flex(center);
+    margin-top: 3rem;
+
+    label {
+      min-width: 7rem;
+      font-size: 1.4rem;
+      color: $heading-color;
+    }
+
+    input {
+      width: calc(100% - 7rem);
+      padding: 5px;
+      outline: none;
+    }
+  }
+
+  &-btn {
+    margin-left: 7rem;
+    margin-top: 3rem;
+
+    @include responsive("small") {
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+  }
+
+  @include responsive("mobile") {
+    padding: 2rem;
+  }
+}
