@@ -1,0 +1,32 @@
+.blog-page {
+  &__heading {
+    margin-bottom: 3rem;
+  }
+
+  &__list {
+    @include flex($wrap: wrap, $gap: 3rem);
+  }
+
+  &__item {
+    width: calc(33.33333% - 2rem);
+
+    &:hover {
+      cursor: pointer;
+      img {
+        opacity: 0.8;
+      }
+
+      .blog-card__item-title {
+        color: $orange-color;
+      }
+    }
+
+    @include responsive("tablet") {
+      width: calc(50% - 1.5rem);
+    }
+
+    @include responsive("mobile") {
+      width: 100%;
+    }
+  }
+}

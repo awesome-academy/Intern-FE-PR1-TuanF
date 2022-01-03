@@ -1,0 +1,8 @@
+section.blog-page
+  .container
+    +formHeading({class1: 'breadcrumb', title: 'Trang chủ', desc: 'Blog'})
+    .breadcrumb__heading
+      +formHeading({class1: 'breadcrumb__heading-title', title: 'Blog', src: '../../images/titleleft-dark.png'})
+    ul.blog-page__list
+      each blog in blogCards
+        +blogCard(blog)(class="blog-page__item")

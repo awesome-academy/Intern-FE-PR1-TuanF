@@ -5,7 +5,7 @@ mixin footer
         ul.footer__list 
           li.footer__list-item 
             p Thông tin
-            +listItem1({class1: 'footer__list-item', class2: 'footer__list-link', items: ['Về chúng tôi', 'Giao hàng', 'Cảm nghĩ', 'Lưu trữ', 'Chính sách riêng tư'] 
+          +listItem1({class1: 'footer__list-item', class2: 'footer__list-link', items: ['Về chúng tôi', 'Giao hàng', 'Cảm nghĩ', 'Lưu trữ', 'Chính sách riêng tư'] 
               })
 
         ul.footer__list 
@@ -24,9 +24,7 @@ mixin footer
             input.footer__list-input(type="text" placeholder="Enter your email")
             a.footer__list-btn(href="#") Gửi
           ul.footer__list-item
-            each item in ['bx bxl-twitter', 'bx bxl-google-plus', 'bx bxl-chrome', 'bx bxl-linkedin', 'bx bx-wifi-2']
-              +listItem('', 'footer__list-link','')
-                i.footer__list-icon(class=item)
+            +footerList(footerItem)
 
         ul.footer__list 
           li.footer__list-item 
@@ -56,6 +54,4 @@ mixin footer
           i.bx.bx-copyright
           p Copyright 2008-2014 DKT Technology JSC
         ul.footer__social-list
-          each item in ['bx bxl-mastercard', 'bx bxl-visa', 'bx bxl-paypal', 'bx bxl-mastercard']
-            +listItem('footer__social-item', 'footer__social-link','')
-              i.footer__social-icon(class=item)
+          +socialList(socialItem)

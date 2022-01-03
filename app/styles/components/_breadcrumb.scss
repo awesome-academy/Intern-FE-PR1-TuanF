@@ -1,0 +1,28 @@
+.breadcrumb {
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+
+  span {
+    color: $orange-color;
+    margin-left: 1rem;
+    position: relative;
+
+    &::before {
+      content: "/";
+      position: absolute;
+      left: -7px;
+      color: $primary-color;
+    }
+  }
+}
+
+.breadcrumb__heading {
+  margin-bottom: 3rem;
+
+  &-title {
+    font-size: 2.4rem;
+    color: $title-color;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+}
