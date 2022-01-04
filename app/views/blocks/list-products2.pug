@@ -1,5 +1,3 @@
-extends list-products1
-block vars
-  - var listAlcohol = [{type: '', src: '../../images/11.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}, {type: '', src: '../../images/11.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}, {type: '', src: '../../images/11.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}, {type: '', src: '../../images/11.jpg', title: 'Rượu vang đà lạt', sale: '370.000đ', price: '450.000đ'}]
-
-  - var introTitle= 'Sản phẩm bán chạy'
+section.list-product 
+  .container
+    +listProduct({list: listAlcohol2, introTitle: 'Sản phẩm bán chạy'})

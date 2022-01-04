@@ -2,14 +2,6 @@
   margin-top: 5rem;
   margin-bottom: 5rem;
 
-  &__breadcrumb-home {
-    font-size: 1.4rem;
-
-    span {
-      color: $orange-color;
-    }
-  }
-
   &__heading {
     @include flex($justify: space-between);
     margin-top: 2.5rem;
@@ -18,6 +10,7 @@
       font-size: 2.4rem;
       color: $title-color;
       margin-bottom: 1rem;
+      text-transform: uppercase;
 
       @include responsive("small") {
         font-size: 2.1rem;
