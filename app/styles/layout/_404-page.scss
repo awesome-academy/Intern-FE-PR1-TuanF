@@ -1,0 +1,79 @@
+.page404 {
+  margin-top: 5rem;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &-container {
+    @include flex(center, center, $gap: 5rem);
+
+    @include responsive("mobile") {
+      gap: 3rem;
+    }
+
+    @include responsive("small") {
+      @include flex($dir: column);
+    }
+  }
+
+  &-logo {
+    img {
+      width: 100px;
+    }
+  }
+
+  &-list {
+    @include flex($gap: 3rem);
+
+    @include responsive("small") {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  &-item {
+    @include flex(center);
+
+    i {
+      color: $heading-color;
+      margin-left: 5px;
+      font-size: 9px;
+
+      @include responsive("small") {
+        display: none;
+      }
+    }
+  }
+
+  &-link {
+    text-transform: uppercase;
+    color: $heading-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: $orange-color;
+    }
+  }
+
+  &-search {
+    @include flex(center);
+    border: 1px solid $heading-color;
+
+    i {
+      color: $heading-color;
+      font-weight: bold;
+      width: 2.6rem;
+      line-height: 2.6rem;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    input {
+      padding: 5px;
+      outline: none;
+      border: none;
+    }
+  }
+}
