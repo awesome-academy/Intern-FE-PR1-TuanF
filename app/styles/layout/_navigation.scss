@@ -1,90 +1,118 @@
 .nav {
-  padding: 2rem 0;
   background: $title-color;
+  padding: 1.2rem 0;
+
+  @include responsive("small") {
+    padding: 1.2rem 0 0;
+  }
 
   &-container {
-    @include flex(center, $gap: 7rem);
+    @include flex(center, $gap: 10rem);
+
+    @include responsive("tablet-pro") {
+      @include flex(center, $gap: 5rem);
+    }
 
     @include responsive("tablet") {
-      @include flex(center, $gap: 1rem);
-    }
-
-    @include responsive("mobile") {
       @include flex(center, $gap: 2rem);
     }
-
-    @include responsive("small") {
-      @include flex($dir: column);
+    @include responsive("mobile") {
+      @include flex($align: center, $dir: column, $gap: 3rem);
     }
   }
 
   &__image {
-    width: 50px;
+    position: relative;
+
+    &-link {
+      display: inline-block;
+      color: $orange-color;
+    }
 
     &-logo {
-      width: 100%;
-      background: $title-color;
-      object-fit: cover;
+      width: 100px;
+
+      @include responsive("mobile") {
+        width: 80px;
+      }
     }
 
-    @include responsive("mobile") {
-      width: 30px;
-    }
-
-    @include responsive("small") {
+    &-content {
+      position: absolute;
       width: 100%;
-      @include flex($justify: center);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      p {
+        font-size: 2.9rem;
+        font-family: $font-corinthia;
+        font-weight: bold;
+
+        @include responsive("mobile") {
+          font-size: 2.3rem;
+        }
+
+        span {
+          display: block;
+          font-size: 1.6rem;
+          font-family: $font-lobster;
+          font-weight: normal;
+
+          @include responsive("mobile") {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      img {
+        width: 25px;
+
+        @include responsive("mobile") {
+          width: 20px;
+        }
+      }
     }
   }
 
   &__list {
-    width: calc(100% - 12rem);
-    @include flex($justify: space-between);
+    @include flex($align: center, $justify: space-between);
+    width: 100%;
 
-    &-item {
-      @include responsive("small") {
-        width: 33.33333%;
-
-        &:not(:last-child) {
-          margin-bottom: 2rem;
-        }
-      }
+    @include responsive("small") {
+      @include flex($align: center, $justify: space-between, $wrap: wrap);
     }
 
-    &-link {
-      font-size: 1.3rem;
-      color: $secondary-color;
+    &-item {
       text-transform: uppercase;
-      transition: color 0.3s linear;
+      font-size: 1.3rem;
+      transition: all 0.25s linear;
 
-      &:hover {
+      &:hover .nav__list-link {
         color: $orange-color;
       }
 
       @include responsive("mobile") {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+      }
+
+      @include responsive("small") {
+        width: 33.33333%;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding-left: 2rem;
       }
     }
 
-    @include responsive("tablet") {
-      width: calc(100% - 7rem);
+    &-link {
+      display: inline-block;
+      color: $secondary-color;
+
+      .nav__image-logo {
+        width: 50px;
+        object-fit: cover;
+      }
     }
-
-    @include responsive("mobile") {
-      width: calc(100% - 5rem);
-    }
-
-    @include responsive("small") {
-      width: 100%;
-      @include flex($wrap: wrap);
-    }
-  }
-
-  @include responsive("mobile") {
-    padding: 1.4rem 0;
-  }
-
-  @include responsive("small") {
-    padding: 1rem 0 2rem;
   }
 }
