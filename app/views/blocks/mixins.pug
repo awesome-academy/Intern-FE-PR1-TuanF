@@ -2,7 +2,7 @@ mixin headerList(headerItem)
   each item in headerItem
     - const { href, title }= item
     li.header__list-item 
-        a.header__list-link(href=href)= title 
+        a.header__list-link(href=href)= title
 
 mixin footerList(list)
   each item in list
@@ -10,6 +10,24 @@ mixin footerList(list)
     li
       a.footer__list-link(href=href)
         i.footer__list-icon(class=icon)
+
+mixin navigation(list)
+  .nav__image
+    a(href="#").nav__image-link
+      img(src="../../images/logo2.png", alt="Logo", class='nav__image-logo')
+      .nav__image-content
+        p Wine hourse
+          span Sine 1980
+        img(src="../../images/logo3.png", alt="Logo")
+  ul.nav__list
+    each item in list
+      - const {class1, title, href}= item
+      if (class1)
+        li(class=`nav__list-item ${class1}`)
+          a.nav__list-link(href=href)=title
+      else
+        li(class='nav__list-item')
+          a.nav__list-link(href=href)=title
 
 mixin socialList(list)
   each item in list 
@@ -270,9 +288,10 @@ mixin descTabs(list)
 
 mixin listProduct({list, introTitle})
   .list-product__intro
-    h2.intro-title= introTitle
-    img(src="../../images/title-dark.png", alt="logo")
-    ul.list-product__list
+    if introTitle
+      h2.intro-title= introTitle
+      img(src="../../images/title-dark.png", alt="logo")
+    ul(class='list-product__list')&attributes(attributes)
       each item in list
         - const {type, src, title, sale, price}= item
         +list-product({type, src, title, sale, price})
@@ -286,3 +305,36 @@ mixin listProduct({list, introTitle})
               p.whishlist-border So sánh
             .whishlist-item
               i.bx.bx-expand
+
+mixin categoryList(list)
+  ul.collection__list
+    each item in list
+      - const {name, quatity}= item
+      li.collection__list-item
+        a.collection__list-link(href="#")= `${name} (${quatity})` 
+
+mixin columnList({list})
+  ul.column-list
+    each item in list
+      - const {src, title, price, desc}= item
+      li.column-item
+        .column-item__image
+          img(src=src, alt="Wine")
+        .column-item__content
+          h2.column-item__title= title
+          p.column-item__price= price
+          p.column-item__desc= desc
+          .whishlist
+            a.btn.btn-active(href="#") Add to cart
+            .whishlist-item
+              i.bx.bxs-heart
+              p.whishlist-border Yêu thích
+            .whishlist-item
+              i.bx.bx-bar-chart-alt
+              p.whishlist-border So sánh
+
+mixin wineList({list, active})
+  if (active == 'grid')
+    +listProduct({list})
+  if (active == 'column')
+    +columnList({list})
