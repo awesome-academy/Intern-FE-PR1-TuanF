@@ -1,8 +1,8 @@
 section.introduction
   .container
-    +formHeading({class1: 'breadcrumb', title: 'Trang chủ', desc: 'Giới thiệu'})
+    +breadcrumb({title: 'Trang chủ', desc: ['Giới thiệu']})
     .breadcrumb__heading
-      +formHeading({class1: 'breadcrumb__heading-title', title: 'Giới thiệu', src: '../../images/titleleft-dark.png'})
+      +formHeading('Giới thiệu')
     .introduction__content
       img.introduction__image(src="../../images/feature-products.jpg", alt="img")
       .introduction__inner

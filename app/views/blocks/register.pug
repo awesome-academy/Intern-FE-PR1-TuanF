@@ -1,10 +1,10 @@
 section.register
   .container
     .register__breadcrumb 
-      +formHeading({class1: 'breadcrumb', title: 'Trang chủ', desc: 'Giới thiệu'})
+      +breadcrumb({title: 'Trang chủ', desc: ['Giới thiệu']})
     .register__heading
       .register__heading__inner
-        +formHeading({class1: 'register__heading-title', title: 'Đăng ký', src: '../../images/titleleft-dark.png'})
+        +formHeading('Đăng ký')
       a.btn.btn-active.register__heading-btn(href="#")  Đăng nhập
     form.form(action="#")
       h3.form-title Thông tin cá nhân
