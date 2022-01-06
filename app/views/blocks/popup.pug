@@ -1,0 +1,17 @@
+section.popup
+  input(type="checkbox" name="" id="popup-input" class="popup__input")
+  label.popup-overplay(for="") 
+  .popup__wrap
+    label.popup-delete(for="popup-input")
+      i.bx.bx-x
+    .popup__wrap-inner
+      .popup__wrap-image
+        img(src="../../images/walker-8.png", alt="img")
+      .popup__wrap-content
+        h2.popup__wrap-title Gửi Email
+        p.popup__wrap-desc Đăng ký Email ngay hôm nay để nhận được thông tin về các sự kiện, các chương trình giảm giá của chúng tôi sớm nhất!
+        form(action="#")
+          .form-input
+            input(type="text", placeholder='Email của bạn...', class= 'popup__wrap-input')
+            a.btn.popup__wrap-btn(href="#")  Gửi Email
+          +checkBox({id: 'popup-check',class1: 'popup__wrap-checkbox', label: 'Không hiện thị lại thông tin này'})

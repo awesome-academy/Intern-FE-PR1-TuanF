@@ -1,0 +1,138 @@
+.popup {
+  @include responsive("small") {
+    display: none;
+  }
+
+  &-overplay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $bg-overplay;
+  }
+
+  &__wrap {
+    padding: 2rem;
+    background: #000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    margin: 0 auto;
+    background: $secondary-color;
+
+    @include responsive("tablet-pro") {
+      top: 15%;
+      transform: translate(-50%, -15%);
+    }
+
+    &-inner {
+      @include flex(center, $gap: 3rem);
+    }
+
+    &-image {
+      width: calc(20% - 1.5rem);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-content {
+      width: calc(80% - 1.5rem);
+      text-align: center;
+    }
+
+    &-title {
+      font-size: 3.2rem;
+      color: $title-color;
+      margin-bottom: 1.5rem;
+    }
+
+    &-desc {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-input {
+      @include flex($align: center);
+      padding-left: 5px;
+
+      @include responsive("mobile") {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+
+    &-input {
+      width: 210px;
+      padding: 7px 10px;
+      outline: none;
+      border: 1px solid $gray-color;
+      border-right: none;
+
+      &::placeholder {
+        font-size: 1.2rem;
+        font-style: italic;
+      }
+
+      @include responsive("mobile") {
+        width: 100%;
+        border-right: 1px solid $gray-color;
+      }
+    }
+
+    &-btn {
+      background: $orange-color;
+      color: $secondary-color;
+      transition: opacity 0.25s linear;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      @include responsive("mobile") {
+        width: 100%;
+      }
+    }
+
+    &-checkbox {
+      @include flex($justify: center);
+      margin: 1.5rem auto 0;
+
+      label {
+        font-size: 1.2rem;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &-delete {
+    position: absolute;
+    top: -35px;
+    right: -40px;
+    color: $secondary-color;
+    cursor: pointer;
+    transition: all 0.25s linear;
+
+    i {
+      font-size: 5rem;
+    }
+
+    &:hover {
+      color: $orange-color;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked ~ .popup-delete,
+    &:checked ~ .popup__wrap,
+    &:checked ~ .popup-overplay {
+      display: none;
+    }
+  }
+}
