@@ -11,7 +11,7 @@ mixin footerList(list)
       a.footer__list-link(href=href)
         i.footer__list-icon(class=icon)
 
-mixin navigation(list)
+mixin navigation({list, dropdowns})
   .nav__image
     a(href="#").nav__image-link
       img(src="../../images/logo2.png", alt="Logo", class='nav__image-logo')
@@ -22,13 +22,44 @@ mixin navigation(list)
   ul.nav__list
     each item in list
       - const {class1, title, href}= item
-      if (class1)
-        li(class=`nav__list-item ${class1}`)
-          a.nav__list-link(href=href)=title
-      else
-        li(class='nav__list-item')
-          a.nav__list-link(href=href)=title
+      each dropdown in dropdowns
+        - const {wine1, wine2}= dropdown
+        case class1
+          when 'wine--red'
+            li(class=`nav__list-item wine ${class1}`)
+              a.nav__list-link(href=href)=title
+              +dropDownList(wine1)
+          when 'wine--white'
+            li(class=`nav__list-item wine ${class1}`)
+              a.nav__list-link(href=href)=title
+              +dropDownList(wine2)
+          when 'champagne'
+            li(class=`nav__list-item wine ${class1}`)
+              a.nav__list-link(href=href)=title
+              +dropDownList(wine1)
+          default
+            li(class='nav__list-item')
+              a.nav__list-link(href=href)=title
+  
+mixin dropDownList(list)
+  .nav__dropdown-wrap
+    each item in list
+      ul.nav__dropdown-list
+        +dropDownItem(item)
 
+mixin dropDownItem(items)
+  each item in items
+    - const {title, href, src}= item
+    if href
+      li.nav__dropdown-item
+        a(href=href)= title
+    else if src
+      li.nav__dropdown-item
+        img(src=src, alt="img")
+    else
+      li.nav__dropdown-item
+        h2.nav__dropdown-title= title
+    
 mixin socialList(list)
   each item in list 
     - const {icon, href}= item
@@ -124,12 +155,14 @@ mixin checkBox({id, class1, label})
   if block
     block 
 
-mixin formHeading({class1, title, desc, src, class2 })
-  p(class= class1)= title
-    if desc
-      span= desc
-  if src 
-    img(src=src, alt="#" class= class2)
+mixin breadcrumb({title, desc: [...desc]})
+  p.breadcrumb= title
+    each item in desc
+      span.desc= item
+
+mixin formHeading(title)
+  p.breadcrumb__heading-title= title
+  img(src='../../images/titleleft-dark.png', alt="#")
 
 mixin newsBlogList(newsList)
   ul.blog-news-list

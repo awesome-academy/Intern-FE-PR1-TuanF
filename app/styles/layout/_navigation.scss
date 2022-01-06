@@ -1,23 +1,24 @@
 .nav {
   background: $title-color;
-  padding: 1.2rem 0;
 
   @include responsive("small") {
     padding: 1.2rem 0 0;
   }
 
   &-container {
-    @include flex(center, $gap: 10rem);
+    @include flex($align: center, $gap: 10rem);
+    height: 100%;
 
     @include responsive("tablet-pro") {
-      @include flex(center, $gap: 5rem);
+      gap: 5rem;
     }
 
     @include responsive("tablet") {
-      @include flex(center, $gap: 2rem);
+      gap: 2rem;
     }
     @include responsive("mobile") {
-      @include flex($align: center, $dir: column, $gap: 3rem);
+      flex-direction: column;
+      gap: 0;
     }
   }
 
@@ -77,11 +78,20 @@
   }
 
   &__list {
-    @include flex($align: center, $justify: space-between);
+    @include flex($align: end, $justify: space-between);
+    position: relative;
     width: 100%;
+    height: 13rem;
+
+    @include responsive("mobile") {
+      align-items: flex-start;
+      height: 2.5rem;
+    }
 
     @include responsive("small") {
-      @include flex($align: center, $justify: space-between, $wrap: wrap);
+      align-items: center;
+      flex-wrap: wrap;
+      height: 10rem;
     }
 
     &-item {
@@ -95,23 +105,107 @@
 
       @include responsive("mobile") {
         font-size: 1.2rem;
+        height: 2.5rem;
       }
 
       @include responsive("small") {
         width: 33.33333%;
         font-size: 1rem;
-        margin-bottom: 2rem;
-        padding-left: 2rem;
+        padding-left: 1.4rem;
       }
     }
 
     &-link {
       display: inline-block;
+      height: 6.5rem;
       color: $secondary-color;
 
       .nav__image-logo {
         width: 50px;
         object-fit: cover;
+      }
+
+      @include responsive("mobile") {
+        height: unset;
+      }
+    }
+  }
+
+  .wine {
+    &:hover .nav__dropdown-wrap {
+      visibility: visible;
+      opacity: 1;
+      top: 13rem;
+
+      @include responsive("mobile") {
+        top: 2.5rem;
+      }
+    }
+  }
+
+  &__dropdown {
+    &-wrap {
+      @include flex();
+      width: 100%;
+      visibility: hidden;
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      top: 15rem;
+      transition: all 0.2s linear;
+      padding: 3rem;
+      border: 1px solid $orange-color;
+      background: $secondary-color;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+
+        @include responsive("tablet") {
+          display: none;
+        }
+      }
+
+      @include responsive("tablet") {
+        justify-content: space-between;
+      }
+
+      @include responsive("mobile") {
+        top: 4.5rem;
+        padding: 2rem;
+      }
+
+      @include responsive("small") {
+        display: none;
+      }
+    }
+
+    &-list {
+      @include flex($dir: column, $gap: 1.2rem);
+      width: 25%;
+      text-transform: capitalize;
+      font-size: 1.4rem;
+
+      .nav__dropdown-title {
+        text-transform: uppercase;
+        color: $title-color;
+        font-weight: bold;
+      }
+
+      a {
+        color: $primary-color;
+        transition: all 0.25s linear;
+
+        &:hover {
+          color: $orange-color;
+        }
+      }
+
+      @include responsive("tablet") {
+        justify-content: space-between;
+        &:last-child {
+          display: none;
+        }
       }
     }
   }

@@ -1,10 +1,10 @@
 section.login
     .container 
       .login__breadcrumb
-        +formHeading({class1: 'breadcrumb ', title: 'Trang chủ', desc: 'Đăng nhập'})
+        +breadcrumb({title: 'Trang chủ', desc: ['Đăng nhập']})
       .login__heading
         .login__heading-inner
-          +formHeading({class1: 'login__heading-title', title: 'Đăng nhập', src: '../../images/titleleft-dark.png'})
+          +formHeading('Đăng nhập')
         a.btn.btn-active.login__heading-btn(href="#") Đăng ký
       form.form(action="#")
         h3.form-title Khách hàng đăng nhập

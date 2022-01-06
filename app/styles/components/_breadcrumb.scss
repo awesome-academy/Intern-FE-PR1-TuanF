@@ -2,8 +2,7 @@
   font-size: 1.4rem;
   margin-bottom: 3rem;
 
-  span {
-    color: $orange-color;
+  .desc {
     margin-left: 1rem;
     position: relative;
 
@@ -12,6 +11,10 @@
       position: absolute;
       left: -7px;
       color: $primary-color;
+    }
+
+    &:last-child {
+      color: $orange-color;
     }
   }
 }

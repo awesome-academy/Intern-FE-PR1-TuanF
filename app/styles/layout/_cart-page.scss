@@ -1,0 +1,116 @@
+.cart-page {
+  margin-top: 5rem;
+
+  .cart__table {
+    text-align: center;
+    color: $heading-color;
+
+    table,
+    th,
+    td {
+      border: 1px solid $gray-color;
+      border-collapse: collapse;
+      outline: none;
+      vertical-align: middle;
+    }
+
+    table {
+      width: 100%;
+      font-size: 1.4rem;
+
+      thead {
+        th {
+          text-transform: uppercase;
+          height: 50px;
+        }
+      }
+
+      @include responsive("mobile") {
+        font-size: 1.2rem;
+      }
+
+      @include responsive("small") {
+        font-size: 1rem;
+      }
+    }
+
+    &-img {
+      width: 20%;
+      img {
+        width: 50%;
+        object-fit: cover;
+
+        @include responsive("small") {
+          width: 100%;
+        }
+      }
+    }
+
+    &-name {
+      width: 30%;
+      text-transform: uppercase;
+
+      @include responsive("small") {
+        text-transform: capitalize;
+      }
+    }
+
+    &-price {
+      width: 15%;
+      color: $orange-color;
+
+      @include responsive("mobile") {
+        width: 13%;
+      }
+    }
+
+    &-quantity {
+      width: 20%;
+
+      @include responsive("mobile") {
+        width: 15%;
+      }
+    }
+
+    &-total {
+      width: 10%;
+      color: $orange-color;
+
+      @include responsive("mobile") {
+        width: 15%;
+      }
+    }
+
+    &-delete {
+      width: 5%;
+
+      a {
+        display: inline-block;
+        color: $heading-color;
+        font-size: 2rem;
+        transition: opacity 0.25s linear;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      @include responsive("mobile") {
+        width: 7%;
+      }
+    }
+  }
+
+  .cart__btn {
+    @include flex($justify: flex-end, $gap: 2rem);
+    margin-top: 3rem;
+
+    @include responsive("small") {
+      gap: 1.5rem;
+
+      a {
+        padding: 1rem 6px;
+      }
+    }
+  }
+}
