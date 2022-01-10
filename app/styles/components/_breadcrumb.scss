@@ -1,26 +1,33 @@
 .breadcrumb {
+  color: $primary-color;
   font-size: 1.4rem;
   margin-bottom: 3rem;
 
-  .desc {
-    margin-left: 1rem;
-    position: relative;
+  &:hover {
+    color: $orange-color;
+  }
+}
 
-    &::before {
-      content: "/";
-      position: absolute;
-      left: -7px;
-      color: $primary-color;
-    }
+.desc {
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  position: relative;
 
-    &:last-child {
-      color: $orange-color;
-    }
+  &::before {
+    content: "/\00a0";
+    position: absolute;
+    left: -7px;
+    color: $primary-color;
+  }
+
+  &:last-child {
+    color: $orange-color;
   }
 }
 
 .breadcrumb__heading {
   margin-bottom: 3rem;
+  margin-top: 3rem;
 
   &-title {
     font-size: 2.4rem;

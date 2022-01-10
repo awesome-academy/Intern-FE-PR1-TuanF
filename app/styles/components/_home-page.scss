@@ -1,0 +1,39 @@
+.home-page {
+  .header--layout {
+    position: static;
+    background: $secondary-color;
+
+    .header__list-item {
+      &:not(:first-child)::before {
+        background: $primary-color;
+      }
+    }
+
+    .header__list-link {
+      color: $primary-color;
+    }
+
+    .header__search-icon {
+      color: $primary-color;
+      transition: all 0.25s linear;
+
+      &:hover {
+        color: $orange-color;
+      }
+    }
+
+    .header__search-input {
+      border-left: 1px solid $primary-color;
+
+      &::placeholder {
+        color: $primary-color;
+      }
+    }
+
+    .nav__hamburger-icon {
+      color: unset;
+      top: 1.5px;
+      transform: unset;
+    }
+  }
+}

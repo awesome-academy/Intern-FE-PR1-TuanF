@@ -2,8 +2,54 @@
   @include flex($dir: column, $gap: 1rem);
   width: calc(50% - 1.5rem);
   text-align: justify;
+  transition: all 0.25s linear;
+
+  &:hover {
+    cursor: pointer;
+
+    .blog-card__item-link {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0%;
+        bottom: 0;
+        border-right: 376.5px solid $bg-header;
+        border-top: 160px solid transparent;
+
+        @include responsive("tablet-pro") {
+          border-right: 319.51px solid $bg-header;
+          border-top: 134px solid transparent;
+        }
+
+        @include responsive("tablet") {
+          border-right: 229.91px solid $bg-header;
+          border-top: 96px solid transparent;
+        }
+
+        @include responsive("mobile") {
+          border-right: 261.6px solid $bg-header;
+          border-top: 111px solid transparent;
+        }
+
+        @include responsive("small") {
+          width: 100%;
+          background: $bg-header;
+          border: none;
+        }
+      }
+    }
+
+    .blog-card__item-title {
+      color: $orange-color;
+    }
+  }
 
   &-img {
+    display: block;
     width: 100%;
   }
 

@@ -1,11 +1,20 @@
-section.login
+extends layout/layout
+
+block vars
+  -bodyClass='home-page'
+
+block container
+  nav.nav 
+    .container.nav-container
+      +navigation({list: navigation, dropdowns: dropDownList})
+  section.login
     .container 
       .login__breadcrumb
         +breadcrumb({title: 'Trang chủ', desc: ['Đăng nhập']})
       .login__heading
         .login__heading-inner
           +formHeading('Đăng nhập')
-        a.btn.btn-active.login__heading-btn(href="#") Đăng ký
+        a.btn.btn-active.login__heading-btn(href="register.html") Đăng ký
       form.form(action="#")
         h3.form-title Khách hàng đăng nhập
         p.form-desc Nếu bạn có một tài khoản, xin vui lòng đăng nhập.
@@ -13,3 +22,12 @@ section.login
         +formGroup({type: 'password', label:'Password*',id:'password1'})
         +checkBox({label: 'Quên mật khẩu*', id: 'check'})
         a.btn.btn-active.form-btn(href="#")  Đăng nhập
+  section.sponsor-section 
+    .container 
+      .sponsor__img
+        a(href="#")
+          img(src="../../images/brand-1.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-2.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-3.png", alt="abc")

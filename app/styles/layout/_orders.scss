@@ -1,0 +1,208 @@
+.orders {
+  margin-top: 5rem;
+
+  &__content {
+    @include flex($gap: 2rem);
+
+    @include responsive("tablet") {
+      flex-direction: column;
+    }
+  }
+
+  &__inner {
+    width: calc(75% - 10px);
+
+    @include responsive("tablet") {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    padding: 3rem;
+    background: $gray-color;
+
+    @include responsive("mobile") {
+      padding: 2rem 1.5rem;
+    }
+
+    &-title {
+      font-size: 1.6rem;
+      color: $heading-color;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    &-list {
+      @include flex($wrap: wrap, $gap: 2rem 3rem);
+    }
+
+    &-item {
+      position: relative;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 14px;
+        margin-left: 1.5rem;
+        background: $primary-color;
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      font-size: 1.4rem;
+      color: $heading-color;
+      transition: all 0.25s linear;
+
+      &:hover {
+        color: $orange-color;
+      }
+    }
+  }
+
+  &__user {
+    width: calc(25% - 10px);
+    color: $heading-color;
+    font-size: 1.4rem;
+    padding: 3rem 2rem;
+    background: $gray-color;
+
+    &-item {
+      @include flex($gap: 5px);
+
+      span {
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-desc {
+      display: inline-block;
+      color: $heading-color;
+      margin-top: 4rem;
+      text-decoration: underline;
+      transition: all 0.25s linear;
+
+      &:hover {
+        color: $orange-color;
+      }
+    }
+
+    @include responsive("tablet") {
+      width: 40%;
+      padding: 3rem;
+    }
+
+    @include responsive("mobile") {
+      width: 50%;
+    }
+
+    @include responsive("small") {
+      width: 100%;
+    }
+  }
+
+  &__table {
+    margin-top: 1px;
+
+    @include responsive("mobile") {
+      max-width: 100%;
+      width: 100vw;
+      overflow-x: scroll;
+    }
+
+    table,
+    th {
+      color: $heading-color;
+      border: 1px solid $gray-color;
+      border-collapse: collapse;
+    }
+
+    table {
+      width: 100%;
+      font-size: 1.4rem;
+
+      @include responsive("mobile") {
+        font-size: 1.3rem;
+        min-width: 100%;
+      }
+    }
+
+    th,
+    td {
+      padding: 2rem 1rem;
+
+      @include responsive("mobile") {
+        white-space: nowrap;
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    .table-detail {
+      color: $heading-color;
+      transition: all 0.25s linear;
+
+      &:hover {
+        color: $orange-color;
+      }
+    }
+
+    thead {
+      th {
+        color: $title-color;
+        text-transform: uppercase;
+
+        @include responsive("mobile") {
+          &:first-child,
+          &:nth-child(3) {
+            display: none;
+          }
+        }
+
+        @include responsive("small") {
+          &:first-child,
+          &:nth-child(3),
+          &:nth-child(6) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    tbody {
+      td {
+        text-align: center;
+        border-left: 1px solid $gray-color;
+
+        @include responsive("tablet") {
+          padding: 1.5rem 0;
+        }
+
+        @include responsive("mobile") {
+          &:first-child,
+          &:nth-child(3) {
+            display: none;
+          }
+        }
+
+        @include responsive("small") {
+          &:first-child,
+          &:nth-child(3),
+          &:nth-child(6) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .table-date {
+      span {
+        display: block;
+        margin-top: 5px;
+      }
+    }
+  }
+}

@@ -106,6 +106,16 @@
           text-transform: uppercase;
         }
 
+        .customer-pagination {
+          @include flex(center, $gap: 5px);
+          font-size: 1rem;
+          margin-top: 1rem;
+
+          .circle-active {
+            color: $orange-color;
+          }
+        }
+
         @include responsive("tablet") {
           margin-top: 2rem;
         }

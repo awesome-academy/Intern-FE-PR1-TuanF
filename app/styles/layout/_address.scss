@@ -1,0 +1,101 @@
+.address {
+  margin-top: 5rem;
+
+  &__myself-title {
+    font-size: 1.8rem;
+    color: $heading-color;
+    text-transform: uppercase;
+  }
+
+  &__myself-smallTitle {
+    font-size: 1.8rem;
+    color: $address-color;
+    text-decoration: underline;
+    transition: color 0.2s linear;
+
+    &:hover {
+      color: $orange-color;
+    }
+  }
+
+  &__myself--right {
+    display: block;
+    text-align: right;
+    margin-top: 2.5rem;
+  }
+
+  &__list {
+    @include flex($gap: 3rem);
+
+    @include responsive("tablet") {
+      @include flex($dir: column);
+    }
+  }
+
+  &__add-list {
+    width: calc(50% - 15px);
+
+    @include responsive("tablet") {
+      width: 100%;
+    }
+  }
+
+  &-form {
+    padding: 0;
+    border: none;
+    width: calc(50% - 15px);
+
+    label {
+      font-size: 1.4rem;
+      min-width: 12rem;
+    }
+
+    input[type="text"] {
+      width: calc(100% - 12rem);
+    }
+
+    &-option {
+      width: calc(100% - 12rem);
+      padding: 5.6px 15px;
+      outline: none;
+    }
+
+    &--disabled {
+      width: 100%;
+      padding-top: 5px;
+      border-top: 1px solid $gray-color;
+
+      input {
+        border: 2px solid transparent;
+        background: transparent;
+      }
+    }
+
+    @include responsive("tablet") {
+      width: 100%;
+    }
+  }
+
+  &-checkbox {
+    margin-left: 12rem;
+  }
+
+  &-btn {
+    @include flex($gap: 1rem);
+    margin-left: 12rem;
+    margin-top: 2.5rem;
+
+    &--bg {
+      background: $address-color;
+      transition: all 0.2s linear;
+
+      &:hover {
+        background: $orange-color;
+      }
+    }
+
+    @include responsive("small") {
+      margin-left: 0;
+    }
+  }
+}

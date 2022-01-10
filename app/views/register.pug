@@ -1,0 +1,38 @@
+extends layout/layout
+
+block vars
+  -bodyClass='home-page' 
+
+block container
+  nav.nav 
+    .container.nav-container
+      +navigation({list: navigation, dropdowns: dropDownList})
+  section.register
+    .container
+      .register__breadcrumb 
+        +breadcrumb({title: 'Trang chủ', desc: ['Đăng ký']})
+      .register__heading
+        .register__heading__inner
+          +formHeading('Đăng ký')
+        a.btn.btn-active.register__heading-btn(href="login.html")  Đăng nhập
+      form.form(action="#")
+        h3.form-title Thông tin cá nhân
+        +formGroup({label: 'Tên trước*', id: 'input1'})
+        +formGroup({label: 'Tên sau*', id: 'input2'})
+        +formGroup({label: 'Email*', id: 'email2'})
+        +formGroup({type: 'password', label: 'Password2*', id: 'password'})
+        h3.form-title.form-login Thông tin đăng nhập 
+        +formGroup({type: 'password', label: 'Mật khẩu*', id:'password3'})
+        +formGroup({type: 'password', label: 'Xác nhận lại mật khẩu*', id:'confirm-password3'})
+        .register__form-btn
+          a.btn.btn-active.btn-send(href="#")  Gửi 
+          a.btn.btn-active.btn-back(href="#")  Quay lại
+  section.sponsor-section 
+    .container 
+      .sponsor__img
+        a(href="#")
+          img(src="../../images/brand-1.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-2.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-3.png", alt="abc")

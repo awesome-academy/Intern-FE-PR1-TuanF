@@ -1,0 +1,27 @@
+extends layout/layout
+
+block vars
+  -bodyClass='home-page'
+
+block container
+  nav.nav 
+    .container.nav-container
+      +navigation({list: navigation, dropdowns: dropDownList})
+  section.blog-page
+    .container
+      .blog-page__breadcrumb
+        +breadcrumb({title: 'Trang chủ', desc: ['Blog']})
+      .breadcrumb__heading
+        +formHeading('Blog')
+      ul.blog-page__list
+        each blog in blogCards
+          +blogCard(blog)(class="blog-page__item")
+  section.sponsor-section 
+    .container 
+      .sponsor__img
+        a(href="#")
+          img(src="../../images/brand-1.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-2.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-3.png", alt="abc")

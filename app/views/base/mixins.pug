@@ -86,9 +86,10 @@ mixin list-product({type, src, title, sale, price})
       block
 
 mixin blogCard(blog)
-  - const {src, title, author, desc}= blog
+  - const {href, src, title, author, desc}= blog
   li(class='blog-card__item')&attributes(attributes)
-    img.blog-card__item-img(src=src, alt="#")
+    a.blog-card__item-link(href=href) 
+      img.blog-card__item-img(src=src, alt="#")
     h2.blog-card__item-title= title 
     p.blog-card__item-author= author 
     p.blog-card__item-desc= desc
@@ -156,9 +157,9 @@ mixin checkBox({id, class1, label})
     block 
 
 mixin breadcrumb({title, desc: [...desc]})
-  p.breadcrumb= title
-    each item in desc
-      span.desc= item
+  a.breadcrumb(href="index.html")= title
+  each item in desc
+    span.desc= item
 
 mixin formHeading(title)
   p.breadcrumb__heading-title= title
@@ -221,28 +222,28 @@ mixin ordersList(tableList)
     - const {id, code, date, store, quantity, total, state, detail}= item
     tr 
       td
-        p=id
+        p= id
       td.table-date
-        p=code
-          span=date
+        p= code
+          span= date
       td
-        p=store
+        p= store
       td
-        p=quantity
+        p= quantity
       td
-        p=total
+        p= total
       td
-        p=state
+        p= state
       if detail
         td
-          p=detail
+          a.table-detail(href="#")= detail
 
 mixin userList(userItem)
   each item in userItem
-    - const {icon, title, desc} = item
+    - const {icon, title, desc}= item
     .orders__user-item
       i(class=icon)
-      p=title
+      p= title
         if desc
           span= desc
 
@@ -338,6 +339,9 @@ mixin listProduct({list, introTitle})
               p.whishlist-border So sánh
             .whishlist-item
               i.bx.bx-expand
+      .list-product__arrow
+        i.bx.bx-left-arrow-alt.arrow.arrow--left
+        i.bx.bx-right-arrow-alt.arrow.arrow--right
 
 mixin categoryList(list)
   ul.collection__list
