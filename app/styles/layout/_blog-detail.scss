@@ -1,0 +1,274 @@
+.blog-detail {
+  margin-top: 5rem;
+
+  &__content {
+    @include flex($gap: 1rem);
+
+    @include responsive("mobile") {
+      @include flex($dir: column);
+    }
+  }
+
+  &__category {
+    width: calc(25% - 5px);
+
+    @include responsive("tablet") {
+      width: calc(40% - 5px);
+    }
+
+    @include responsive("mobile") {
+      width: 100%;
+    }
+  }
+
+  &__card {
+    width: calc(75% - 5px);
+
+    .blog-card__item {
+      @include flex($dir: column, $gap: 3rem);
+      width: 100%;
+
+      &-link {
+        width: 100%;
+      }
+
+      &-img {
+        height: 50rem;
+
+        @include responsive("tablet") {
+          height: auto;
+        }
+      }
+
+      &-title {
+        font-size: 3rem;
+
+        @include responsive("tablet") {
+          font-size: 2.4rem;
+        }
+
+        @include responsive("small") {
+          font-size: 1.9rem;
+        }
+      }
+
+      &-author {
+        font-size: 2.1rem;
+
+        @include responsive("small") {
+          font-size: 1.4rem;
+        }
+      }
+
+      &-desc {
+        font-size: 1.9rem;
+        font-style: italic;
+
+        @include responsive("small") {
+          font-size: 1.4rem;
+        }
+      }
+
+      &:hover .blog-card__item-link::after {
+        content: unset;
+      }
+    }
+
+    @include responsive("tablet") {
+      width: calc(60% - 5px);
+    }
+
+    @include responsive("mobile") {
+      width: 100%;
+    }
+  }
+
+  .blog-category-title {
+    font-size: 1.8rem;
+    color: $heading-color;
+    text-transform: uppercase;
+
+    &--italic {
+      font-style: italic;
+    }
+  }
+
+  .blog-news-list {
+    @include flex($dir: column, $gap: 3rem);
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+
+  .blog-news-link {
+    @include flex($gap: 1rem);
+  }
+
+  .blog-news-img {
+    min-width: 10rem;
+    height: 8rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .blog-news-title {
+    font-size: 1.3rem;
+    color: $title-color;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .blog-news-date {
+    @include flex(center);
+    font-size: 1.4rem;
+    color: $primary-color;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  .blog-tags-list {
+    @include flex($wrap: wrap, $gap: 1rem);
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+
+  .blog-tags-link {
+    display: inline-block;
+    color: $primary-color;
+    padding: 6px 8px;
+    background: $gray-color;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+
+    &:hover {
+      background: $orange-color;
+      color: $secondary-color;
+    }
+  }
+
+  &__form {
+    border: none;
+    padding: 0;
+  }
+
+  .form-group-textarea {
+    textarea {
+      outline: none;
+      padding: 5px 2rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &-btn {
+    margin-left: 7rem;
+    margin-top: 3rem;
+    color: $title-color;
+    background: $gray-color;
+    border-radius: 5px;
+  }
+
+  .blog-comments {
+    @include flex($dir: column, $gap: 3rem);
+    margin-top: 5rem;
+
+    &-title {
+      font-size: 1.8rem;
+      color: $title-color;
+    }
+  }
+
+  .comments-sub-desc {
+    @include flex(center, space-between);
+    background: $gray-color;
+    font-size: 1.4rem;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+
+    .sub-desc-left {
+      .blog-comments-time {
+        margin-left: 2rem;
+        border-left: 1px solid $primary-color;
+        padding-left: 2rem;
+
+        @include responsive("small") {
+          margin-left: 1rem;
+          padding-left: 1rem;
+        }
+      }
+    }
+
+    .sub-desc-right {
+      a {
+        color: $primary-color;
+        transition: color 0.2s linear;
+
+        &:hover {
+          color: $orange-color;
+        }
+      }
+    }
+
+    @include responsive("small") {
+      font-size: 1.2rem;
+      padding: 12px 5px;
+    }
+  }
+
+  .comments-desc {
+    padding-left: 12px;
+    padding-right: 5px;
+    font-size: 1.4rem;
+
+    @include responsive("small") {
+      @include clamp(4);
+      padding-left: 5px;
+    }
+  }
+
+  .pagination-item {
+    @include flex(center, flex-end);
+    margin-top: 4rem;
+    font-size: 1.4rem;
+
+    a {
+      display: inline-block;
+      color: black;
+      padding: 8px 12px;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      margin: 0 4px;
+      transition: all 0.25s linear;
+    }
+
+    a.active {
+      background-color: $primary-color;
+      color: $secondary-color;
+      border: 1px solid $primary-color;
+    }
+
+    a:hover:not(.active) {
+      background-color: $primary-color;
+      color: $secondary-color;
+    }
+
+    a:first-child,
+    a:last-child {
+      background: $title-color;
+      color: $secondary-color;
+      transition: all 0.25s linear;
+
+      &:hover {
+        color: $title-color;
+      }
+    }
+  }
+}
