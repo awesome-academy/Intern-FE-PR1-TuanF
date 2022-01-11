@@ -1,0 +1,41 @@
+extends layout/layout 
+
+block vars
+  -bodyClass='home-page'
+
+block container
+  nav.nav 
+    .container.nav-container
+      +navigation({list: navigation, dropdowns: dropDownList})
+  section.blog-detail
+    .container
+      .blog-detail__breadcrumb
+        +breadcrumb({title: 'Trang chủ', desc: ['Blog']})
+      .breadcrumb__heading
+        +formHeading('Blog')
+      .blog-detail__content
+        .blog-detail__category 
+          h2.blog-category-title Bài viết mới nhất
+          +newsBlogList(newsList)
+          h2.blog-category-title blog tags
+          +nameTags(tagsList)
+          h2.blog-category-title Latest video
+        .blog-detail__card
+          +blogCard({src: '../../images/detail-blog.jpg', title: 'Vang thăng long classic', author: 'Đăng bởi Giangle | 30/06/2015 | 60 bình luận', desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora adipisci rem, delectus unde quae aliquam similique minus. Corporis necessitatibus suscipit atque. Animi consequatur pariatur, porro culpa officiis non sapiente aperiam.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora adipisci rem, delectus unde quae aliquam similique minus. Corporis necessitatibus suscipit atque. Animi consequatur pariatur, porro culpa officiis non sapiente aperiam.'})
+          form.form.blog-detail__form(action="#")
+            i.blog-category-title.blog-category-title--italic Đóng góp ý kiến
+            +formGroup({label: 'Tên*', id: 'blog-detail-name'}) 
+            +formGroup({label: 'Email*', id: 'blog-detail-email'}) 
+            +formGroup({type: 'textarea', label: 'Ý kiến*', id: 'blog-detail-textarea'})
+            a.btn.btn-active.blog-detail-btn(href="#") Gửi ý kiến
+          +blogComments(commentsList)
+          +pagination
+  section.sponsor-section 
+    .container 
+      .sponsor__img
+        a(href="#")
+          img(src="../../images/brand-1.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-2.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-3.png", alt="abc")
