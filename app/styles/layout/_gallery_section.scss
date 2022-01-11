@@ -1,18 +1,77 @@
 .gallery {
-  margin-top: 10rem;
+  @include flex($wrap: wrap);
+  margin-top: 8rem;
 
   &__images {
-    &-img {
-      width: 25%;
-      height: 30rem;
-      object-fit: cover;
+    position: relative;
+    width: 25%;
+    cursor: pointer;
 
-      @include responsive("tablet") {
-        width: 50%;
+    &:hover {
+      .gallery__images-img {
+        border: 4px solid $orange-color;
+      }
+      .gallery__images-content {
+        opacity: 1;
+      }
+    }
+
+    @include responsive("tablet") {
+      width: 50%;
+    }
+
+    @include responsive("small") {
+      width: 100%;
+    }
+
+    &-img {
+      width: 100%;
+      height: 26rem;
+      object-fit: cover;
+      transition: all 0.2s linear;
+    }
+
+    &-content {
+      position: absolute;
+      opacity: 0;
+      color: $secondary-color;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.22s linear;
+    }
+
+    &-desc {
+      position: relative;
+      font-size: 7.2rem;
+      margin-top: 1rem;
+      padding: 1rem 5px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -10%;
+        width: 100%;
+        height: 120%;
+        border-left: 1px solid $secondary-color;
+        border-right: 1px solid $secondary-color;
       }
 
-      @include responsive("small") {
-        width: 100%;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -5%;
+        width: 110%;
+        height: 100%;
+        border-top: 1px solid $secondary-color;
+        border-bottom: 1px solid $secondary-color;
       }
     }
   }

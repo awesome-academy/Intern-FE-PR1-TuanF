@@ -1,0 +1,31 @@
+extends layout/layout
+
+block container
+  section.orders
+    .container
+      .orders__breadcrumb
+        +breadcrumb({title: 'Trang chủ', desc: ['Danh sách đơn hàng']})
+      .breadcrumb__heading
+        +formHeading('Đơn hàng')
+      .orders__content
+        .orders__inner
+          .orders__info
+            h2.orders__info-title Danh sách đơn hàng
+            +ordersInfo(infoList)
+          .orders__table
+            table
+              thead 
+                tr
+                  th STT
+                  th Mã đơn hàng/ngày mua hàng
+                  th Kho nhận hàng 
+                  th Số SP 
+                  th Tổng tiền 
+                  th Tình trạng 
+                  th Thao tác
+              tbody
+                +ordersList(tableList)
+        .orders__user
+            h2.orders__info-title Thông tin khách hàng
+            +userList(userItem)
+            a.orders__user-desc(href="#") Chi tiết địa chỉ

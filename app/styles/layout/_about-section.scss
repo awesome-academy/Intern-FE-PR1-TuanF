@@ -1,6 +1,58 @@
 .about {
+  position: relative;
+  overflow: hidden;
+
+  .about__wine {
+    position: absolute;
+    z-index: $z-negative;
+  }
+
+  .wine--left {
+    top: 0;
+    left: 0;
+
+    .about__wine-image {
+      width: 60%;
+
+      @include responsive("tablet-pro") {
+        width: 40%;
+      }
+
+      @include responsive("tablet-pro") {
+        width: 30%;
+      }
+    }
+  }
+
+  .wine--right {
+    top: -58px;
+    right: -200px;
+    width: 20%;
+
+    .about__wine1-image {
+      width: 100%;
+    }
+
+    @include responsive("tablet-pro") {
+      top: 0;
+      right: -145px;
+    }
+
+    @include responsive("tablet") {
+      right: -96px;
+    }
+
+    @include responsive("mobile") {
+      right: -75px;
+    }
+
+    @include responsive("small") {
+      right: -50px;
+    }
+  }
+
   &-container {
-    margin-top: 9rem;
+    padding-top: 9rem;
     text-align: center;
   }
 
@@ -23,16 +75,8 @@
     margin-bottom: 3rem;
     padding: 0 14rem;
 
-    @include responsive("tablet-pro") {
-      padding: 0 3rem;
-    }
-
-    @include responsive("tablet-pro") {
-      padding: 0 3rem;
-    }
-
     @include responsive("tablet") {
-      padding: 0 2rem;
+      padding: 0 3rem;
     }
 
     @include responsive("small") {

@@ -1,8 +1,0 @@
-section.blog-page
-  .container
-    +breadcrumb({title: 'Trang chủ', desc: ['Blog']})
-    .breadcrumb__heading
-      +formHeading('Blog')
-    ul.blog-page__list
-      each blog in blogCards
-        +blogCard(blog)(class="blog-page__item")

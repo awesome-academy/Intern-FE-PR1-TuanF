@@ -4,6 +4,25 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+
+  &-pagination {
+    @include flex($gap: 1rem);
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .rectangle {
+      background: $gray-color;
+      width: 2.5rem;
+      height: 4px;
+
+      &--active {
+        background: $orange-color;
+      }
+    }
+  }
 
   &__content {
     position: relative;

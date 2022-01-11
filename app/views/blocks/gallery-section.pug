@@ -1,4 +1,7 @@
 section.gallery
-    .gallery__image
-        each src in images
+    each src in images
+        .gallery__images
             img.gallery__images-img(src=(imgSrc + src.img), alt='Gallery')
+            .gallery__images-content
+                p.gallery__images-number 1987
+                p.gallery__images-desc rượu

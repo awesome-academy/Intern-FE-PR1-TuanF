@@ -5,18 +5,39 @@
     text-align: center;
     color: $heading-color;
 
+    @include responsive("mobile") {
+      max-width: 100%;
+      overflow-x: scroll;
+    }
+
     table,
     th,
     td {
       border: 1px solid $gray-color;
-      border-collapse: collapse;
-      outline: none;
       vertical-align: middle;
+      white-space: nowrap;
+      padding: 0 1rem;
+
+      @include responsive("mobile") {
+        padding: 2rem 1rem;
+      }
+    }
+
+    th:not(:first-child),
+    td:not(:first-child) {
+      @include responsive("mobile") {
+        width: 100%;
+        min-width: 0;
+      }
     }
 
     table {
       width: 100%;
       font-size: 1.4rem;
+
+      @include responsive("mobile") {
+        min-width: 100%;
+      }
 
       thead {
         th {
@@ -28,62 +49,35 @@
       @include responsive("mobile") {
         font-size: 1.2rem;
       }
-
-      @include responsive("small") {
-        font-size: 1rem;
-      }
     }
 
     &-img {
-      width: 20%;
-      img {
-        width: 50%;
-        object-fit: cover;
+      max-width: 150px;
 
-        @include responsive("small") {
-          width: 100%;
+      img {
+        width: 40%;
+        object-fit: cover;
+      }
+
+      @include responsive("mobile") {
+        min-width: 120px;
+
+        img {
+          width: 60%;
         }
       }
     }
 
     &-name {
-      width: 30%;
       text-transform: uppercase;
-
-      @include responsive("small") {
-        text-transform: capitalize;
-      }
     }
 
-    &-price {
-      width: 15%;
-      color: $orange-color;
-
-      @include responsive("mobile") {
-        width: 13%;
-      }
-    }
-
-    &-quantity {
-      width: 20%;
-
-      @include responsive("mobile") {
-        width: 15%;
-      }
-    }
-
+    &-price,
     &-total {
-      width: 10%;
       color: $orange-color;
-
-      @include responsive("mobile") {
-        width: 15%;
-      }
     }
 
     &-delete {
-      width: 5%;
-
       a {
         display: inline-block;
         color: $heading-color;
@@ -93,10 +87,6 @@
         &:hover {
           opacity: 0.5;
         }
-      }
-
-      @include responsive("mobile") {
-        width: 7%;
       }
     }
   }
