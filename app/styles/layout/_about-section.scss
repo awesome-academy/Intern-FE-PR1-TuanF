@@ -87,13 +87,12 @@
 
   &-btn {
     @include responsive("tablet-pro") {
-      padding-left: 6rem;
-      padding-right: 6rem;
+      padding: 0 6rem;
     }
 
     @include responsive("mobile") {
-      padding-left: 8rem;
-      padding-right: 8rem;
+      padding: 1.5rem 8rem;
+      font-size: 1.3rem;
     }
   }
 }

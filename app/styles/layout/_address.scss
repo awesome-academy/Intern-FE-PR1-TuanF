@@ -85,6 +85,12 @@
     margin-left: 12rem;
     margin-top: 2.5rem;
 
+    .btn {
+      @include responsive("mobile") {
+        padding: 1.4rem 1.5rem;
+      }
+    }
+
     &--bg {
       background: $address-color;
       transition: all 0.2s linear;

@@ -137,6 +137,11 @@
     @include flex($wrap: wrap, $gap: 1rem);
     margin-bottom: 4rem;
     margin-top: 4rem;
+    font-size: 1.4rem;
+
+    @include responsive("mobile") {
+      gap: 1.5rem;
+    }
   }
 
   .blog-tags-link {
@@ -150,6 +155,10 @@
     &:hover {
       background: $orange-color;
       color: $secondary-color;
+    }
+
+    @include responsive("mobile") {
+      padding: 1.4rem 1.2rem;
     }
   }
 
@@ -172,6 +181,10 @@
     color: $title-color;
     background: $gray-color;
     border-radius: 5px;
+
+    @include responsive("mobile") {
+      padding: 1.4rem 1.2rem;
+    }
   }
 
   .blog-comments {

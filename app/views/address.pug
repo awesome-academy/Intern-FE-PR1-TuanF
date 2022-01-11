@@ -1,0 +1,47 @@
+extends layout/layout
+
+block vars
+  -bodyClass='home-page'
+
+block container
+  nav.nav 
+    .container.nav-container
+      +navigation({list: navigation, dropdowns: dropDownList})
+  section.address 
+    .container
+      .address__breadcrumb
+        +breadcrumb({title: 'Trang chủ', desc: ['Địa chỉ']})
+      .breadcrumb__heading
+        +formHeading('Địa chỉ')
+      .address__content
+        .address__list
+          form.form.address-form(action="#") 
+            p.address__myself-title Địa chỉ của bạn
+            +addressForm({address})
+            +checkBox({label: 'Đặt làm địa chỉ mặc định?', id: 'default1', class1: 'address-checkbox'})
+            .address-btn
+              a.btn.address-btn--bg(href="#") Chỉnh sửa địa chỉ
+              a.btn.btn-active(href="#")  Xoá
+          form.form.address-form
+            p.address__myself-smallTitle Thêm địa chỉ
+            +addressForm({address})
+            +checkBox({label: 'Đặt làm địa chỉ mặc định?', id: 'default2', class1: 'address-checkbox'})
+            .address-btn
+              a.btn.address-btn--bg(href="#") Cập nhập địa chỉ
+              a.btn.btn-active(href="#")  Xoá
+        .address__add-list 
+          form.form.address-form.address-form--disabled(action="#")
+            +addressForm({address, isDisabled: "true"})
+            a.address__myself-smallTitle.address__myself--right(href="#")  Chỉnh sửa địa chỉ
+          form.form.address-form.address-form--disabled(action="#")
+            +addressForm({address, isDisabled: "true"})
+            a.address__myself-smallTitle.address__myself--right(href="#")  Chỉnh sửa địa chỉ
+  section.sponsor-section 
+    .container 
+      .sponsor__img
+        a(href="#")
+          img(src="../../images/brand-1.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-2.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-3.png", alt="abc")

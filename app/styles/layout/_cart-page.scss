@@ -95,11 +95,17 @@
     @include flex($justify: flex-end, $gap: 2rem);
     margin-top: 3rem;
 
+    @include responsive("mobile") {
+      a {
+        padding: 1.4rem 1.5rem;
+      }
+    }
+
     @include responsive("small") {
       gap: 1.5rem;
 
       a {
-        padding: 1rem 6px;
+        padding: 1.4rem 9px;
       }
     }
   }
