@@ -157,7 +157,7 @@ mixin checkBox({id, class1, label})
     block 
 
 mixin breadcrumb({title, desc: [...desc]})
-  a.breadcrumb(href="index.html")= title
+  a.breadcrumb(href="/")= title
   each item in desc
     span.desc= item
 
