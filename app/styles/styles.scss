@@ -1,9 +1,10 @@
 @import "./base/reset";
 @import "./helpers/variables";
+@import "./helpers/mixins";
 @import "./helpers/global";
 @import "./base/typography";
-@import "./helpers/mixins";
 @import "./components/button";
+@import "./components/toast";
 @import "./components/blogCard";
 @import "./components/breadcrumb";
 @import "./components/home-page";
@@ -29,3 +30,4 @@
 @import "./layout/orders";
 @import "./layout/address";
 @import "./layout/blog-detail";
+@import "./layout/contact-page";

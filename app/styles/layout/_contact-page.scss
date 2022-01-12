@@ -1,0 +1,212 @@
+.contact-page {
+  margin-top: 5rem;
+
+  .contact__content {
+    &-info {
+      @include flex($gap: 3rem);
+
+      @include responsive("tablet") {
+        flex-direction: column;
+      }
+    }
+
+    &-map {
+      width: calc(75% - 15px);
+      iframe {
+        width: 100%;
+
+        @include responsive("small") {
+          height: 20rem;
+        }
+      }
+
+      @include responsive("tablet") {
+        width: 100%;
+      }
+    }
+
+    &-detail {
+      width: calc(25% - 15px);
+
+      @include responsive("tablet") {
+        width: 100%;
+      }
+    }
+
+    &-logo {
+      position: relative;
+      margin-bottom: 3rem;
+      cursor: pointer;
+
+      @include responsive("tablet") {
+        display: none;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      bottom: 0;
+      left: 3%;
+      text-align: center;
+      color: $orange-color;
+
+      p {
+        font-size: 2.9rem;
+        font-family: $font-corinthia;
+        font-weight: bold;
+      }
+
+      span {
+        display: block;
+        font-size: 1.6rem;
+        font-family: $font-lobster;
+        font-weight: normal;
+      }
+
+      img {
+        width: 2.6rem;
+      }
+
+      @include responsive("tablet") {
+        left: 1%;
+      }
+    }
+
+    &-address,
+    &-phone,
+    &-mail {
+      @include flex($gap: 5px);
+
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+
+      a {
+        color: $primary-color;
+        transition: color 0.25s linear;
+
+        &:hover {
+          color: $orange-color;
+        }
+      }
+
+      @include responsive("tablet") {
+        font-size: 1.6rem;
+      }
+    }
+    &-address {
+      line-height: 1.5;
+    }
+
+    &-mail {
+      margin-bottom: 3rem;
+    }
+
+    &-follows {
+      .follows-title {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+
+        @include responsive("tablet") {
+          font-size: 2.4rem;
+        }
+      }
+
+      .follows-list {
+        @include flex($align: center, $gap: 1rem);
+
+        i {
+          font-size: 2rem;
+          margin-top: 1.5rem;
+          transition: color 0.25s linear;
+
+          &:hover {
+            color: $orange-color;
+          }
+
+          @include responsive("tablet") {
+            @include flex(center, $gap: 3rem);
+            font-size: 2.8rem;
+          }
+
+          @include responsive("small") {
+            gap: 2rem;
+            font-size: 2.4rem;
+          }
+        }
+
+        @include responsive("tablet") {
+          @include flex(center, $gap: 3rem);
+        }
+
+        @include responsive("small") {
+          gap: 2rem;
+        }
+      }
+    }
+
+    .contact--disabled {
+      width: 100%;
+      padding-top: 5px;
+      pointer-events: none;
+
+      input,
+      textarea {
+        border: 2px solid $bg-disabled;
+        background: $bg-disabled;
+      }
+    }
+
+    &-form {
+      width: calc(75% - 15px);
+
+      .contact-form {
+        padding: 0;
+        border: none;
+      }
+
+      .form-group {
+        @include responsive("small") {
+          @include flex($dir: column, $gap: 1rem);
+        }
+
+        label {
+          min-width: 10rem;
+        }
+
+        input {
+          @include responsive("small") {
+            width: 100%;
+          }
+        }
+      }
+
+      textarea {
+        outline: none;
+        padding-top: 5px;
+        height: 150px;
+
+        @include responsive("small") {
+          height: 100px;
+        }
+      }
+
+      @include responsive("tablet") {
+        width: 100%;
+      }
+    }
+
+    &-btn {
+      margin-left: 10rem;
+      margin-top: 2.5rem;
+      padding: 1rem 2rem;
+
+      @include responsive("small") {
+        display: block;
+        text-align: center;
+        font-size: 1.4rem;
+        margin-left: 0;
+        padding: 1.4rem 0;
+      }
+    }
+  }
+}
