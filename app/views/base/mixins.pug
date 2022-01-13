@@ -80,8 +80,9 @@ mixin list-product({type, src, title, sale, price})
   li.list-item(class=(type ? `list-item--${type}` : ''))
     img.list-item__image(src=src, alt="Alcohol")
     h2.list-item__title= title
-    p.list-item__sale= sale
-      span.list-item__sale-price= price
+    p.list-item__price
+      span.list-item__price-sale= sale
+      span.list-item__price-cost= price
     if block 
       block
 
