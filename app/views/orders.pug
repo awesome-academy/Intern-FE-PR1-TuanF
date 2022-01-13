@@ -1,6 +1,12 @@
 extends layout/layout
 
+block vars
+  -bodyClass='home-page'
+
 block container
+  nav.nav 
+    .container.nav-container
+      +navigation({list: navigation, dropdowns: dropDownList})
   section.orders
     .container
       .orders__breadcrumb
@@ -29,3 +35,12 @@ block container
             h2.orders__info-title Thông tin khách hàng
             +userList(userItem)
             a.orders__user-desc(href="#") Chi tiết địa chỉ
+  section.sponsor-section 
+    .container 
+      .sponsor__img
+        a(href="#")
+          img(src="../../images/brand-1.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-2.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-3.png", alt="abc")

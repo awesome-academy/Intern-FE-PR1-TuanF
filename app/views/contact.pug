@@ -1,0 +1,55 @@
+extends layout/layout
+
+block vars 
+  -bodyClass='home-page'
+
+block container
+  nav.nav 
+    .container.nav-container
+      +navigation({list: navigation, dropdowns: dropDownList})
+  section.contact-page
+    .container
+      .contact__breadcrumb
+        +breadcrumb({title: 'Trang chủ', desc: ['Địa chỉ']})
+      .breadcrumb__heading
+        +formHeading('Liên hệ')
+      .contact__content
+        .contact__content-info
+          .contact__content-map
+            iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.391131799626!2d105.78171301476313!3d21.017030286004843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab836a7bf639%3A0x41e0b1307113d8d1!2sSun*2A%20Inc.!5e0!3m2!1sen!2s!4v1640790080166!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy")
+          .contact__content-detail
+            .contact__content-logo 
+              img(src="../../images/logo2.png", alt="Logo")
+              .contact__content-text
+                p Wine hourse
+                span Sine 1980
+                img(src="../../images/logo3.png", alt="Logo")
+            .contact__content-address
+              i.bx.bxs-location-plus
+              a(href="#")  Tầng 4, Tòa nhà Hanoi Group Số 442 Đội Cấn, P. Cống Vị, Q. Ba Đình, Hà Nội
+            .contact__content-phone
+              i.bx.bxs-phone
+              a(href="tel:(04) 6674 2332") (04) 6674 2332
+            .contact__content-mail
+              i.bx.bxl-gmail
+              a(href="mailto:support@milano.com") support@milano.com
+            .contact__content-follows
+              h3.follows-title Follow us:
+              ul.follows-list 
+                +footerList(contactItem)
+        .contact__content-form
+          form.form.contact-form.contact--disabled(action="#")
+            +formGroup({label: 'Your Name', id: 'contact-name'}) 
+            +formGroup({label: 'Your Email', id: 'contact-email'}) 
+            +formGroup({label: 'Subject', id: 'contact-subject'}) 
+            +formGroup({type: 'textarea', label: 'Your Message' , id: 'contect-textarea'})
+          a.btn.btn-active.contact__content-btn(href="#") Gửi
+  section.sponsor-section 
+    .container 
+      .sponsor__img
+        a(href="#")
+          img(src="../../images/brand-1.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-2.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-3.png", alt="abc")
