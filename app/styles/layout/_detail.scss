@@ -1,0 +1,460 @@
+.detail {
+  margin-top: 5rem;
+
+  &__breadcrumb {
+    margin-bottom: 3rem;
+  }
+
+  &__content {
+    @include flex($gap: 3rem);
+
+    @include responsive("tablet") {
+      @include flex($dir: column);
+    }
+
+    &-img {
+      position: relative;
+      width: calc(60% - 15px);
+      border: 2px solid $gray-color;
+
+      @include responsive("tablet") {
+        width: 100%;
+      }
+    }
+
+    &-list {
+      @include flex($dir: column, $gap: 3rem);
+
+      @include responsive("small") {
+        @include flex($dir: column, $gap: 1.5rem);
+      }
+    }
+
+    &-item {
+      position: relative;
+      &:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        bottom: -1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40%;
+        height: 2px;
+        background: $gray-color;
+
+        @include responsive("small") {
+          bottom: -7.5px;
+        }
+      }
+    }
+
+    &-item--active {
+      .tabs-link {
+        img {
+          border: 2px solid $orange-color;
+        }
+      }
+    }
+
+    &-tabs {
+      @include flex($align: center, $justify: center, $dir: column, $gap: 3rem);
+      position: absolute;
+      width: 18%;
+      top: -2px;
+      left: 0;
+      bottom: -2px;
+      text-align: center;
+      border-right: 2px solid $gray-color;
+      padding: 0 1rem;
+
+      .tabs-link {
+        display: inline-block;
+        img {
+          width: 70%;
+          object-fit: cover;
+
+          @include responsive("tablet") {
+            width: 100%;
+          }
+        }
+      }
+
+      .arrow-up {
+        font-size: 2.4rem;
+        color: $orange-color;
+
+        @include responsive("small") {
+          font-size: 2rem;
+        }
+      }
+
+      .arrow-down {
+        font-size: 2.4rem;
+
+        @include responsive("small") {
+          font-size: 2rem;
+        }
+      }
+
+      @include responsive("tablet") {
+        width: 15%;
+      }
+
+      @include responsive("mobile") {
+        @include flex($align: center, $justify: center, $dir: column, $gap: 1.5rem);
+      }
+
+      @include responsive("small") {
+        @include flex($align: center, $justify: center, $dir: column, $gap: 5px);
+        padding: 0 3px;
+      }
+    }
+
+    &-main {
+      img {
+        display: block;
+        margin-left: auto;
+        width: 90%;
+        object-fit: cover;
+
+        @include responsive("small") {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__options {
+    width: calc(40% - 15px);
+
+    @include responsive("tablet-pro") {
+      width: calc(50% - 15px);
+    }
+
+    @include responsive("tablet") {
+      width: 100%;
+    }
+
+    &-price {
+      font-size: 3.4rem;
+      color: $orange-color;
+      margin-top: 2.5rem;
+    }
+
+    &-stars {
+      @include flex(center, $gap: 1rem);
+      border-top: 1px solid $gray-color;
+      border-bottom: 1px solid $gray-color;
+      padding: 2rem 0;
+      margin: 1.5rem 0 3rem;
+
+      @include responsive("tablet-pro") {
+        margin: 1.5rem 0 2rem;
+      }
+
+      a {
+        color: $primary-color;
+      }
+
+      .checked {
+        color: $orange-color;
+      }
+
+      .stars__reviews-btn {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 1px;
+          height: 100%;
+          left: -5px;
+          background: $primary-color;
+        }
+      }
+    }
+
+    .detail-title {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+    }
+
+    &-color {
+      .color-list {
+        @include flex(center, $gap: 4px);
+        margin-top: 1rem;
+      }
+
+      .color-item {
+        &--active {
+          padding: 2px;
+          border: 1px solid $title-color;
+          border-radius: 3px;
+        }
+      }
+
+      .color-bg {
+        display: block;
+        width: 25px;
+        height: 25px;
+
+        &--yellow {
+          background: orange;
+        }
+
+        &--black {
+          background: $title-color;
+        }
+
+        &--red {
+          background: red;
+        }
+      }
+    }
+
+    &-size {
+      margin-top: 3rem;
+
+      .size-select {
+        outline: none;
+        padding: 3.6px 15px;
+        color: $primary-color;
+        border: 1px solid inherit;
+        margin-top: 1rem;
+      }
+
+      @include responsive("tablet-pro") {
+        margin-top: 2rem;
+      }
+    }
+
+    &-quatity {
+      margin-top: 3rem;
+
+      @include responsive("tablet-pro") {
+        margin-top: 2rem;
+      }
+
+      .quatity-inner {
+        @include flex(center, $gap: 1.5rem);
+        margin-top: 1rem;
+
+        .quatity-number {
+          @include flex(center);
+
+          input {
+            color: $gray-color;
+            padding: 3px 0;
+            border: 2px solid;
+            outline: none;
+            text-align: center;
+            width: 54.83px;
+          }
+
+          .btn-up,
+          .btn-down {
+            color: $title-color;
+            font-weight: bold;
+            font-size: 1.6rem;
+            padding: 5px 10px;
+            background: $gray-color;
+          }
+        }
+
+        .quatity-btn {
+          padding: 7px 1.5rem;
+        }
+      }
+    }
+
+    &-whishlist {
+      @include flex($align: center, $gap: 2rem);
+      margin-top: 3rem;
+      font-size: 1.4rem;
+
+      .detail-whishlist-item {
+        @include flex($align: center, $gap: 5px);
+        transition: color 0.25s linear;
+
+        &:hover {
+          color: $orange-color;
+          cursor: pointer;
+        }
+      }
+
+      @include responsive("tablet-pro") {
+        margin-top: 2rem;
+      }
+    }
+
+    &-desc {
+      margin-top: 3rem;
+
+      .desc-sub {
+        width: 85%;
+        margin-top: 1rem;
+        font-size: 1.3rem;
+        line-height: 1.2;
+      }
+
+      @include responsive("tablet-pro") {
+        margin-top: 2rem;
+      }
+    }
+
+    &-social {
+      @include flex(center, $gap: 1rem);
+      margin-top: 4rem;
+
+      @include responsive("tablet-pro") {
+        margin-top: 2rem;
+      }
+
+      @include responsive("small") {
+        @include flex(center, $gap: 1.6rem, $wrap: wrap);
+      }
+
+      .social-item {
+        @include flex(center, $gap: 7px);
+        transition: opacity 0.25s linear;
+
+        &:hover {
+          opacity: 0.6;
+        }
+
+        .social-logo {
+          @include flex(center, $gap: 5px);
+          padding: 4px;
+          font-size: 1.3rem;
+          border-radius: 4px;
+        }
+
+        .social-logo.fb {
+          border: 1.5px solid blue;
+          background: blue;
+          color: $secondary-color;
+        }
+
+        .social-logo.twitter {
+          background: $bg-twitter;
+          border: 1.5px solid $gray-color;
+
+          i {
+            color: $twitter-color;
+          }
+
+          span {
+            color: $heading-color;
+          }
+        }
+
+        .social-logo.google {
+          border: 1.5px solid $gray-color;
+          color: red;
+
+          span {
+            font-size: 8px;
+            margin-left: -5px;
+          }
+        }
+
+        .social-logo.linkedin {
+          background: $linkedin-color;
+          border: 1.5px solid $gray-color;
+          color: $secondary-color;
+        }
+
+        .social-logo.pinterest {
+          background: $bg-twitter;
+          border: 1.5px solid $gray-color;
+          color: red;
+
+          span {
+            margin-left: -8px;
+          }
+        }
+
+        .social-popover {
+          font-size: 1.4rem;
+          padding: 4px 9px;
+          border: 1px solid $gray-color;
+          position: relative;
+
+          &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            border: 4px solid transparent;
+          }
+
+          &:before {
+            border-right-color: $gray-color;
+            bottom: 8px;
+            left: -9px;
+          }
+        }
+      }
+    }
+  }
+
+  &__desc {
+    @include flex($justify: space-between);
+    margin-top: 7rem;
+
+    @include responsive("tablet") {
+      @include flex($dir: column-reverse, $gap: 3rem);
+    }
+
+    .desc-tabs-list {
+      @include flex($gap: 2rem);
+
+      @include responsive("small") {
+        @include flex($gap: 5px);
+      }
+    }
+
+    &-img {
+      width: 25%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      @include responsive("tablet") {
+        width: 100%;
+
+        img {
+          height: 500px;
+        }
+      }
+
+      @include responsive("small") {
+        img {
+          height: 200px;
+        }
+      }
+    }
+
+    .desc-tabs-item {
+      &--active {
+        .tabs-list-btn {
+          background: $orange-color;
+          color: $secondary-color;
+        }
+      }
+    }
+
+    .tabs-list-btn {
+      border: none;
+      color: $primary-color;
+      background: $secondary-color;
+
+      @include responsive("small") {
+        font-size: 1rem;
+        padding: 8px 6px;
+      }
+    }
+  }
+}

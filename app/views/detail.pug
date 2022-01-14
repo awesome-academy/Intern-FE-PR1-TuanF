@@ -1,0 +1,77 @@
+extends layout/layout
+
+block vars 
+  -bodyClass='home-page'
+
+block container
+  nav.nav 
+    .container.nav-container
+      +navigation({list: navigation, dropdowns: dropDownList})
+  section.detail
+    .container
+      .detail__breadcrumb
+        +breadcrumb({title: 'Trang chủ', desc: ['Sản phẩm', 'Rượu vang đỏ']})
+      .detail__content
+        .detail__content-img
+          .detail__content-tabs
+            .arrow-up
+              i.bx.bx-up-arrow-alt
+            .detail__content-inner
+              +tabsList(tabList)
+            .arrow-down
+              i.bx.bx-down-arrow-alt
+          .detail__content-main
+            +imageTabList(tabList)
+        .detail__options
+          +formHeading('Rượu nho năm 1987')
+          .detail__options-price 330.000đ
+          .detail__options-stars
+            +stars(4)
+            a(href="javascript:void(0)").stars__reviews 1 Review(S)
+            a(href="javascript:void(0)").stars__reviews-btn Add your review
+          .detail__options-color
+            p.detail-title Màu sắc
+            +optionColor(optionColor)
+          .detail__options-size
+            p.detail-title Kích cỡ
+            select.size-select
+              +option(optionSize)
+          .detail__options-quatity
+            .detail-title Số lượng
+            .quatity-inner
+              .quatity-number
+                a.btn.btn-down(href="javascript:void(0)") -
+                input(type="text", id='quatity', value=3)
+                a.btn.btn-up(href="javascript:void(0)") +
+              a.btn.btn-active.quatity-btn(href="#") Add to cart
+          .detail__options-whishlist
+            .detail-whishlist-item
+              i.bx.bxs-heart
+              span Yêu thích
+            .detail-whishlist-item
+              i.bx.bx-bar-chart-alt
+              span So sánh
+            .detail-whishlist-item
+              i.bx.bxl-gmail
+              span Email
+          .detail__options-desc
+            h3.detail-title Mô tả
+            p.desc-sub Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+          .detail__options-social
+            +socialDetail(socialList)
+      .detail__desc
+        .detail__desc-tabs
+          +descTabs(detailTabs)
+        .detail__desc-img
+          img(src="../../images/detail-blog.jpg", alt="img")
+      .list-product
+        +listProduct({list: listAlcohol2, introTitle: 'Sản phẩm liên quan'})
+  section.sponsor-section 
+    .container 
+      .sponsor__img
+        a(href="#")
+          img(src="../../images/brand-1.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-2.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-3.png", alt="abc")
