@@ -1,0 +1,51 @@
+extends layout/layout
+
+block vars
+  -bodyClass='home-page'
+
+block container
+  nav.nav 
+    .container.nav-container
+      +navigation({list: navigation, dropdowns: dropDownList})
+  section.collection
+    .container
+      .collection__breadcrumb
+        +breadcrumb({title: 'Trang chủ', desc: ['Sản phẩm', 'Rượu vang đỏ']})
+      .collection-banner
+        img(src="../../images/slide-1-2050x898.jpg", alt="banner")
+      .collection__content
+        .collection__content-filter
+          +formHeading('Danh mục sản phẩm')
+          ul.collection__content-filter-list
+            li.filter-wine RƯỢU NGOẠI
+              +categoryList(ruouNgoai)
+            li.filter-wine RƯỢU VANG
+              +categoryList(ruouVang)
+          .collection__content-compare
+            +formHeading('Sản phảm so sánh')
+            p.category-compare Bạn chưa có sản phẩm nào để so sánh
+          .collection__content-tagsname
+            +formHeading('Tag sản phẩm')
+            +nameTags(tagsProduct)
+          .collection__content-banner
+            img(src="../../images/collection-1.jpg", alt="banner")
+        .collection__content-list
+          .products-pagination
+            .pagination-direction 
+              label(for="products__checkbox")
+                i.bx.bxs-grid
+              label(for="products__checkbox")
+                i.bx.bx-list-ul
+            +pagination
+          input(type="checkbox" id ='products__checkbox', class='products__input')
+          +wineList({list: gridList, active: 'grid'})
+          +wineList({list: colummList, active: 'column'})
+  section.sponsor-section 
+    .container 
+      .sponsor__img
+        a(href="#")
+          img(src="../../images/brand-1.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-2.png", alt="abc")
+        a(href="#")
+          img(src="../../images/brand-3.png", alt="abc")

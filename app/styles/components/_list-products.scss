@@ -108,12 +108,13 @@
         margin-bottom: 1.5rem;
       }
 
-      &__sale {
+      &__price {
+        @include flex(center, center);
         font-size: 2.1rem;
         color: $orange-color;
         margin-bottom: 2rem;
 
-        &-price {
+        &-cost {
           font-size: 1.4rem;
           margin-left: 1rem;
           text-decoration: line-through;
